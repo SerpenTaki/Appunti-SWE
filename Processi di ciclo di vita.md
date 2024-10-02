@@ -91,3 +91,43 @@ Aderire ad un modello di ciclo di vita consente di determinare quali processi se
 - **Verifiche ispettive interne**
 - **Risoluzione dei problemi (_gestione dei cambiamenti_)**
 ### Processi organizzativi
+> I processi organizzativi sono trasversali rispetto ai singoli progetti, come il S/O rispetto al programma
+> - Tullio
+- Gestione dei processi
+	- *Debugging* dei processi
+- Gestione delle infrastrutture (tecniche)
+	- Organizzazione degli strumenti di supporto ai processi
+- Miglioramento del processo
+	- Manutenzione migliorativa dei processi
+- Formazione del personale
+	- Aiuto, stimolo e completamento all'auto-formazione
+![[Screenshot 2024-10-02 alle 14.53.44.png]]
+![[Screenshot 2024-10-02 alle 14.54.03.png]]
+attività di processo : https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T02.pdf
+### Specializzazione di processi
+- Fattori di specializzazione
+	- Dimensione e complessità del progetto
+	- Tipo e intensità dei rischi di progetto
+	- Competenza ed esperienza delle risorse umane
+- Associare ai processi un **Sistema di qualità** aiuta a migliorarli e a garantire conformità
+	- **Maturità** = qualità misurata delle prestazioni
+	- **Conformità** = adesione alle aspettative e agli obblighi
+
+![[Screenshot 2024-10-02 alle 14.59.16.png]]
+### Organizzazione di processo
+- Il <u>controllo di processo</u> consente di attuare manutenzione migliorativa al proprio *way of working*
+	- **Principio del miglioramento continuo**
+		- *Shewhart-Deming's Learning-and-Quality Cycle 1950*
+- Ciclo a 4 stadi innescato per apportare specifiche migliorie a specifici processi
+
+# Ciclio di miglioramento continuo
+- **Pianificare (_plan_)**
+	- Definire *attività, scadenze, responsabilità, risorse* <u>per raggiungere specifici obiettivi di miglioramento</u>
+	- Non è pianificazione di progetto, ma pianificazione di miglioramento
+- **Eseguire (_Do_)**
+	- Eseguire le attività secondo P
+	- Non è sviluppo, ma dispiegamento (*esplorativo*) di azioni di miglioramento
+- **Valutare (_Check_)**
+	- Verificare l'esito delle azioni di miglioramento rispetto alle attese
+- **Agire (_Act_)**
+	- Consolidare il buono - aggiornando il *way of working* - e cercare altri modi per migliorare il resto
