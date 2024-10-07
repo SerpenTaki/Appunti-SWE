@@ -69,6 +69,17 @@ Aderire ad un modello di ciclo di vita consente di determinare quali processi se
 	- Specifica le responsabilità sui processi
 	- Identifica i prodotti dei processi
 ![[Screenshot 2024-10-02 alle 14.05.14.png]]
+
+##### Processi Di Un Project
+- Primary: *chi compra?, chi fornisce?, chi fa?...*
+- Supporting: *documentazione..*
+- Organizzativi
+C'è un Project sse c'è un processo primario, quest'ultimo ritorna un output, e vogliamo che questo *output* sia un esito **Certo e Positivo**
+**Verification**: hai svolto bene le attività
+**Validation**: mostra tutta l'evidenza catturata dalla verification
+In tutto questo ci sono 2 processi ulteriori
+- Supporto : documentazione
+- Organizzativi: **Training**-> allenamento da non fare direttamente sul progetto prima si impara a lavorare a regola d'arte e poi una volta che si è esperti si tocca il progetto
 ### Processi primari
 - **Acquisizione**
 	- Gestione dei propri sotto-fornitori

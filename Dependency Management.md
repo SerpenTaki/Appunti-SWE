@@ -5,6 +5,18 @@
 	- _Cambiamenti esterni_: interfaccia o comportamento estrinseco
 - La dipendenza è una misura della _probabilità_ di _cambiamenti_ tra componenti dipendenti
 	- Più forte è la dipendenza più è alta la probabilità
+**Dipendenza**: quando cambia un oggetto A allora c'è una possibilità che anche l'oggetto B cambi
+Questo concetto ci interessa perchè il primo rilascio di un software avviene all'inizio del suo ciclo di vita. 
+> Dopo il primo rilascio iniziano i problemi
+> - Cardin
+
+**NON** esiste SW privo di BUG!
+2 tipi di manutenzione:
+- *Correttiva*
+- *Aggiuntiva*-> aggiunge feature
+**Obiettivo**: creare un SW meno modificabile possibile quindi privo di dipendenze, per evitare un grosso **Debito Tecnico**: ovvero un debito da saldare noto da errori e scelte non ottimali nella progettazione del software che prima o poi dovranno essere corrette.
+
+Ricorda che le specifiche iniziali di un software sono sempre diverse dalle specifiche finali
 ### Accoppiamento
 - Una *misura* del grado di *dipendenza*
 	- **Tightly-coupled**: molta probabilità di cambiamenti
