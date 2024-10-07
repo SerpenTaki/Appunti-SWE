@@ -140,3 +140,4 @@ La misura è la media di tutte le misure di accoppiamento
 		- it would use always all 3 types
 	- $\delta^{Rectangle}_{tot}$ would be high too
 - The given solution probably obtains the *minimization* of $\delta^C_{tot}$
+[[OOP Revisited]]
