@@ -148,6 +148,37 @@ Si basano su 4 principi ideologici:
 	- *L'eccessiva rigidità ostacola l'emergere del valore*
 2. **Working software over comprehensive documentation**
 	- *La documentazione non sempre corrisponde a SW funzionante*
-3. 
+3. **Customer collaboration over contract negotiation**
+	- *L'interazione con gli stakeholders va incentivata e non ingessata*
+4. **Responding to change over following a plan**
+	- _la capacità di adattamento al cambiare delle situazioni è importante_
+---
+###### Contro-argomentazioni
+- SW privo di documentazione produce costo, non valore
+	- Commentare il codice <u>non</u> basta: serve spiegare e motivare le scelte realizzative
+- Senza un piano, non si possono valutare rischi e direzioni di avanzamento
+	- La sola misurazione di consuntivo <u>non</u> basta
+- Cambiare si può, ma con consapevolezza del rapporto costo/benefici
+---
+- L'idea di base è il concetto di "*user story*"
+	- Una funzionalità significativa che l'utente vuole realizzare con il SW richiesto: uno **Scenario d'uso**
+- Ogni *user story* è definita da
+	- Un documento di descrizione del problema individuato
+	- il verbale delle conversazioni avute con gli *stakeholder* per discutere e comprendere il problema
+	- La strategia da usare per confermare che il SW realizzato soddisfi gli obiettivi di quel problema
+- Assunti base
+	- Suddividere il lavoro in piccoli incrementi a valore aggiunto, magari anche sviluppabili indipendentemente
+	- Sviluppare ciascun incremento in sequenza continua dall'analisi all'integrazione
+- Obiettivi strategici
+	- Poter <u>sempre</u> dimostrare al cliente lo stato corrente
+	- Verificare l'avanzamento tramite progresso reale, capace di fornire riscontro (*feedback*)
+	- Dare agli sviluppatori la soddisfazione del risultato
+- Buoni esempi
+	- *Scrum, Kanban, Scrumban*
+# Scrum
+[[ScrumMTSS]] //per approfondire https://github.com/SerpenTaki/MTSSnotesUnipd
+
+
+
 
 
