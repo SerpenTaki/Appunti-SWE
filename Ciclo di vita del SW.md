@@ -175,10 +175,8 @@ Si basano su 4 principi ideologici:
 	- Dare agli sviluppatori la soddisfazione del risultato
 - Buoni esempi
 	- *Scrum, Kanban, Scrumban*
+**NB**: _il vero modello incrementale è il paradiso (culmine ideale) dell'agile_
 # Scrum
 [[ScrumMTSS]] //per approfondire https://github.com/SerpenTaki/MTSSnotesUnipd
-
-
-
-
-
+![[Screenshot 2024-10-08 alle 15.46.48.png]]
+![[Screenshot 2024-10-08 alle 15.47.33.png]]![[Screenshot 2024-10-08 alle 15.47.48.png]]
