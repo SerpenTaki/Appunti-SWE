@@ -72,4 +72,15 @@
 - Entrare, uscire, stazionare in una fase comporta lo svolgimento di determinate azioni
 	- Realizzate come attività di specifici processi
 ![[Screenshot 2024-10-08 alle 11.47.15.png]]
-Cr
+## Critica al modello sequenziale
+- Difetto Principale: **eccessiva rigidità**
+	- Stretta sequenzialità: nessun parallelismo nessun ritorno
+	- Non ammette modifiche nei requisiti in corso d'opera
+	- Visione rigida (*burocratica*) e poco realistica del progetto
+- Correttivo 1: con prototipazione
+	- Prototipi di tipo *usa e getta*
+		- *per capire meglio i requisiti o le soluzioni, strettamente all'interno di singole fasi*
+- Correttivo 2: con ritorni
+	- Come allenamenti prima dell'atto definitivo
+		- *per imparare a fare sempre meglio ciò che serve a realizzare il prodotto*
+- 

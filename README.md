@@ -3,8 +3,8 @@ Appunti del corso di ingegneria del software
 
 ---
 ### Teoria
-- [[Ciclo di vita del SW]]
 - [[Processi di ciclo di vita]]
+- [[Ciclo di vita del SW]]
 
 ----
 ### Pratica
