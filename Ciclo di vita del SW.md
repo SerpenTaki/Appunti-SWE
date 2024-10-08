@@ -83,4 +83,71 @@
 - Correttivo 2: con ritorni
 	- Come allenamenti prima dell'atto definitivo
 		- *per imparare a fare sempre meglio ciò che serve a realizzare il prodotto*
-- 
+---
+### Incrementali o iterativo?
+- Problemi molto complessi richiedono di procedere provando
+	- Spesso tramite iterazioni potenzialmente distruttive
+- Conviene che lo sviluppo proceda per piccoli passi incrementali
+	- Evitando di integrare il prodotto tutto-in-una-volta (*aka big-bang-integration*)
+	- Assai meglio adottare l'*integrazione continua*
+- Integrazione e incremento coincidono quando la sostituzione raffina ma non ha impatto sul resto
+##### Vantaggi incrementali
+- Possono produrre valore ad ogni incremento
+	- Un insieme crescente di funzionalità utili diventa presto e progressivamente disponibile
+	- Magari a valle di una buona prototipazione, non usa-e-getta
+- Procedere per incrementi riduce il rischio di fallimento
+	- Anche se il rischio non può essere azzerato...
+	- Come un ciclo `for`, da cui sappiamo quando usciremo, a meno di eccezioni
+- Le funzionalità fondamentali (*quelle più immediatamente necessarie*) vanno sviluppate prima
+	- Il loro uso frequente aiuta a verificare che siano solide
+##### Vantaggi dei modelli iterativi
+- Possono applicare a qualunque modello di sviluppo
+	- Comportando però forte potenziale distruttivo
+- Consentono maggior capacità di adattamento
+	- Insorgere di problemi, cambio di requisiti, collasso tecnologico
+- Comportano il rischio di non convergenza
+	- Come un ciclo `while`, da cui non sappiamo per certo se e quando usciremo
+- Tecniche di mitigazione
+	- Decomporre il sistema in parti, lavorando prima su quelle più critiche, perchè più complesse o con requisiti più incerti
+	- Fissando un limite superiore al numero di iterazioni
+###### Rischi dei modelli iterativi
+![[Screenshot 2024-10-08 alle 14.57.27.png]]
+- Nel 1992 si inizia a parlare di **_technical debt_** per designare parti di _design_ o codice bisognose di **_refactoring_**, cioè di future "passate <u>iterative</u>"
+	- Quelle parti costituivano un debito, contratto per avanzare più velocemente, ma da saldare al più presto, per non pagarlo, dopo, con interessi composti
+- Oggi quel termine designa tutti i punti dello sviluppo nei quali la soluzione realizzata non concorda con la nostra comprensione corrente di come dovrebbe essere
+	- Quei tipi di soluzione sono detti **_kludge_** e sono debiti da sanare presto, perchè la loro presenza toglie qualità al prodotto
+# Modello Incrementale
+- Prevede rilasci multipli e successivi
+	- Ciascuno realizza un incremento di funzionalità
+- I **requisiti** vanno classificati presto e trattati in base alla loro importanza strategica
+	- I primi incrementi puntano a soddisfare i requisiti più importanti sul piano strategico
+	- Quello che serve avere prima in funzione di cosa vogliamo poter dimostrare (agli *stakeholder*)
+- Così i requisiti "*importanti*" diventano presto chiari e stabili, quindi più facilmente soddisfacibili
+	- Quelli meno importanti hanno invece più tempo per stabilizzarsi e armonizzarsi con lo stato del sistema
+![[Screenshot 2024-10-08 alle 15.12.21.png]]
+- Analisi dei requisiti e progettazione architetturale vengono svolte una stessa passata iniziale
+	- Per stabilizzare presto i requisiti principali
+	- Per stabilizzare presto l'**architettura** (_design_) complessiva del sistema, che deve essere capace di accogliere incrementi futuri senza rompersi
+	- Per poter decidere preventivamente il numero di incrementi e i loro specifici obiettivi
+- La realizzazione avanza per passi incrementali
+	- Raffinando l'analisi dei requisiti e la progettazione di dettaglio, strettamente entro l'architettura adottata
+	- Il completamento dei primi incrementi serve a rendere disponibili le principali funzionalità
+![[Screenshot 2024-10-08 alle 15.16.11.png]]
+# Modello a componenti
+```mermaid
+flowchart TD
+A(Analisi dei Requisiti)-->B(Analisi delle Componenti)-->C(Adattamento dei requisiti)-->D(Progettazione con Riuso)-->E(Sviluppo e Integrazione)-->F(Validazione di Sistema)
+```
+- Molto di quello che ci serve già esiste
+- Molto di quello che faremo potrebbe servirci ancora
+	- Analisi dei requisiti guidata dalla possibilità di riuso di quanto già esista
+	- Realizzazione che cerca di favorire riuso futuro
+# Metodi Agili
+Si basano su 4 principi ideologici:
+1. **Individuals and interactions over processes and tools**
+	- *L'eccessiva rigidità ostacola l'emergere del valore*
+2. **Working software over comprehensive documentation**
+	- *La documentazione non sempre corrisponde a SW funzionante*
+3. 
+
+
