@@ -73,6 +73,7 @@
 	- Realizzate come attività di specifici processi
 ![[Screenshot 2024-10-08 alle 11.47.15.png]]
 ## Critica al modello sequenziale
+*1 cosa per volta, allontani il feedback dall'implementation*
 - Difetto Principale: **eccessiva rigidità**
 	- Stretta sequenzialità: nessun parallelismo nessun ritorno
 	- Non ammette modifiche nei requisiti in corso d'opera
@@ -117,6 +118,7 @@
 - Oggi quel termine designa tutti i punti dello sviluppo nei quali la soluzione realizzata non concorda con la nostra comprensione corrente di come dovrebbe essere
 	- Quei tipi di soluzione sono detti **_kludge_** e sono debiti da sanare presto, perchè la loro presenza toglie qualità al prodotto
 # Modello Incrementale
+*Risolvo prima robe piccole e poi aggiungo pezzi, ho rispettato i requisiti ma l'ho fatto pian piano a pezzi*
 - Prevede rilasci multipli e successivi
 	- Ciascuno realizza un incremento di funzionalità
 - I **requisiti** vanno classificati presto e trattati in base alla loro importanza strategica
@@ -143,6 +145,7 @@ A(Analisi dei Requisiti)-->B(Analisi delle Componenti)-->C(Adattamento dei requi
 	- Analisi dei requisiti guidata dalla possibilità di riuso di quanto già esista
 	- Realizzazione che cerca di favorire riuso futuro
 # Metodi Agili
+*io vorrei tanto essere incrementale e so che è difficile, ma posso convergere ad esso perchè il rischio di incrementalità è rotto da principi più vicini*
 Si basano su 4 principi ideologici:
 1. **Individuals and interactions over processes and tools**
 	- *L'eccessiva rigidità ostacola l'emergere del valore*
@@ -179,4 +182,30 @@ Si basano su 4 principi ideologici:
 # Scrum
 [[ScrumMTSS]] //per approfondire https://github.com/SerpenTaki/MTSSnotesUnipd
 ![[Screenshot 2024-10-08 alle 15.46.48.png]]
-![[Screenshot 2024-10-08 alle 15.47.33.png]]![[Screenshot 2024-10-08 alle 15.47.48.png]]
+
+---
+![[Screenshot 2024-10-08 alle 15.47.33.png]]
+Qui sono riportate alcune tappe tra quelle che potrebbero essere delle milestone e quindi degli indicatori che ci dicono lo stato, *sei indietro, sei al pari...*
+**Milestone**: avanzamenti attesi dentro la vita di un project, se capisco quali sono i punti posso capire dove mi trovo nel progetto.
+UN Progetto è composto da 4 cose sappiamo: e se guardiamo i requisiti solo dentro i requisiti sono presenti delle milestone.
+![[Screenshot 2024-10-16 alle 09.01.37.png]]
+**MIlestone** di inizio e fine:
+1. **Conception**, **Conceived**, **Concept**: fatta dai proponenti (*inizio di un ciclo di vita di un software*)
+2. **Bounded**: delimitare l'idea
+3. **Coherent**: Ci accordiamo, **concorrente**, vagliamo
+4. **Acceptable**
+5. **Addressed**: ho le soluzioni e sono concrete (*riguarda l'inizio della implementation*)
+6. **Fulfilled**, **Soddisfatti**: arrivati a fare tutti gli obiettivi (**Tutto soddisfatto**)*ultimo stadio dell'analisi dei requisiti.*
+*Che metodo uso per andare avanti?*
+
+---
+![[Screenshot 2024-10-08 alle 15.47.48.png]]
+*Ci sono anche delle milestone nel __way of working.__*
+Il *way of working* ha secondo SEMAT:
+1. **Principles Established**: mettere le fondamenta
+2. **Fundation Established**
+3. **In Use**: *obbedisco*
+4. **In Place**: *adesso la sedia la poltrona o il divano hanno la mia sagoma*, la sto usando per come l'ho pensata, passiamo da obbedisco a capisco
+5. **Working well**: misura che il mio *way of working* stia facendo risultati e che quindi io stia lavorando bene. Fare le cose senza costo.
+6. **Retirement**: *Questo si raggiunge a progetto finito in azienda è difficile che si butta via*
+gli stadi di avanzamento sono tutti quanti asincroni, e si avanza secondo la nostra strategia. Il *way of working* deve avanzare velocemente per arrivare il più velocemente possibile all'In Place. 
