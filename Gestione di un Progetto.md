@@ -55,4 +55,21 @@ Per fare bene una validation mi serve una checklist, quindi una specie di lista 
 	- Funzione o ruolo?
 		- Funzione aziendale in organizzazione strutturale, con più progetti simili (*ragioni di standardizzazione*)
 		- Altrimenti ruolo di progetto
-- 
+## Gestione qualità
+- La funzione di più recente introduzione 
+	- Funzione aziendale, non ruolo di progetto
+- La **qualità** 
+....
+# Pianificazione di un progetto
+- Definizione delle attività
+	- Per pianificare lo svolgimento e valutare il progetto
+	- Per avere una base su cui gestire l'allocazione delle risorse
+	- Per stimare e controllare scadenze e costi
+- Strumenti per la pianificazione
+	- Diagrammi di Gantt
+	- *Programme Evaluation and Review Technique* (PERT)
+### Diagramma di Gantt
+- Dislocazione temporale delle attività
+	- Per rappresentarne la durata
+	- Per rappresentarne sequenzialità e parallelismo
+	- Per confrontare le stime con i progressi
