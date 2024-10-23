@@ -162,14 +162,26 @@ A-->D[1.3 Piano di progetto]
 - Requisiti e rapporti con gli *stakeholder*
 - Tempi e costi
 ### Gestione dei rischi
+*attività che mi permette quali possono essere i rischi che potrei trovare ovvero magari imparare un repo o un nuovo linguaggio, i vari bug che potrebbero accadere, in modo tale che questi __rischi__ non accadano oppure se accadono saperli gestire __ASAP__*
+*In classe fa l'esempio della bici ad esempio se si spacca la camera d'aria-> viaggiare con delle camere d'aria in più, sapere dove fermarsi, saper cambiare la camera d'aria. Oppure un rischio potrebbe essere quello che la ruota si sgonfi e quindi prima di un viaggio lungo in bici si viaggia con la gomma un po' più gonfia*
+*Un rischio del progetto potrebbe essere qualcuno che non faccia qualcosa per problemi, perchè non ha voglia o perchè non riesce, quindi questo rischio va affrontato possibilemente sul nascere e non verso il controllo perchè potrebbe essere troppo tardi*.
+**I rischi non sono statici ma cambiano nel tempo quindi sono dinamici e possono diminuire con il tempo**
 - Identificazione
 	- Nel progetto, nel prodotto, nel mercato
 - Analisi
 	- Probabilità di occorrenza, conseguenze possibili
 - Pianificazione
 	- Come evitare i rischi o mitigarne gli effetti
+	- *saggio applicarla a periodi con un ragionamento tale che applicarla a piccoli periodi diventa più facilmente applicabile*
+		- SCRUM: noi dividiamo il tempo in sprint e ad ogni sprint noi ci diamo degli obiettivi "piccoli su tempo breve" che ci avvicinano verso la meta di un progetto (*rilascio*)
+		- Quanti periodi, quanta durata del periodo, come ripartiamo gli obiettivi nel periodo
+			- Esempio nostro progetto, tempo inizio "da quando i gruppi sono attivi", tempo di fine "da quando c'è la final release"
 - Controllo
 	- Attenzione continua tramite rilevazione di indicatori
 	- Attuazione delle procedure di mitigazione
 	- Raffinamento delle strategie
 ![[Screenshot 2024-10-22 alle 16.57.43.png]]
+**RTB:** Requirements and Tecnology Baselone
+**PB:** Product Baseline
+è sconsigliabile che questi 2 macro-periodi siano obiettivi di avanzamento ok che sono richiesti per il progetto ma è molto più consigliabile che questi siano divisi in micro-periodi, *diario di bordo settimanale*-> può questo indicare che i periodi diventano settimanali? non è scontato. I periodi saranno di ampiezza settimanale? improbabile per dare obiettivi significativi.
+*retrospettiva*: attività regolamentata da inserire a ogni fine periodo, per vedere se gli obiettivi posti sono stati raggiunti e raffinare un ragionamento che affini il prossimo obiettivo.
