@@ -164,19 +164,19 @@ A-->D[1.3 Piano di progetto]
 ### Gestione dei rischi
 *attività che mi permette quali possono essere i rischi che potrei trovare ovvero magari imparare un repo o un nuovo linguaggio, i vari bug che potrebbero accadere, in modo tale che questi __rischi__ non accadano oppure se accadono saperli gestire __ASAP__*
 *In classe fa l'esempio della bici ad esempio se si spacca la camera d'aria-> viaggiare con delle camere d'aria in più, sapere dove fermarsi, saper cambiare la camera d'aria. Oppure un rischio potrebbe essere quello che la ruota si sgonfi e quindi prima di un viaggio lungo in bici si viaggia con la gomma un po' più gonfia*
-*Un rischio del progetto potrebbe essere qualcuno che non faccia qualcosa per problemi, perchè non ha voglia o perchè non riesce, quindi questo rischio va affrontato possibilemente sul nascere e non verso il controllo perchè potrebbe essere troppo tardi*.
+*Un rischio del progetto potrebbe essere qualcuno che non faccia qualcosa per problemi, perchè non ha voglia o perchè non riesce, quindi questo rischio va affrontato possibilemente sul nascere e non verso il controllo perchè potrebbe essere troppo tardi. Oppure il lavorare asincronamente, e noi lavoriamo asincronamente, quindi un altro rischio è aspettarsi che ognuno lavori con ritmi diversi*.
 **I rischi non sono statici ma cambiano nel tempo quindi sono dinamici e possono diminuire con il tempo**
-- Identificazione
+- **Identificazione**
 	- Nel progetto, nel prodotto, nel mercato
-- Analisi
+- **Analisi**
 	- Probabilità di occorrenza, conseguenze possibili
-- Pianificazione
+- **Pianificazione**
 	- Come evitare i rischi o mitigarne gli effetti
 	- *saggio applicarla a periodi con un ragionamento tale che applicarla a piccoli periodi diventa più facilmente applicabile*
 		- SCRUM: noi dividiamo il tempo in sprint e ad ogni sprint noi ci diamo degli obiettivi "piccoli su tempo breve" che ci avvicinano verso la meta di un progetto (*rilascio*)
 		- Quanti periodi, quanta durata del periodo, come ripartiamo gli obiettivi nel periodo
 			- Esempio nostro progetto, tempo inizio "da quando i gruppi sono attivi", tempo di fine "da quando c'è la final release"
-- Controllo
+- **Controllo**
 	- Attenzione continua tramite rilevazione di indicatori
 	- Attuazione delle procedure di mitigazione
 	- Raffinamento delle strategie
