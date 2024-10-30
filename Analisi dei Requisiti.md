@@ -72,3 +72,68 @@
 	- Dire come svolgeremo le attività di **V&V** nel progetto
 	- E con quali obiettivi di qualità
 	- **V&V** = Qualifica
+![[Screenshot 2024-10-30 alle 08.40.45.png]]
+in un progetto tutte le attività sono collegate e ognuna di esse certifica il lavoro svolto.
+È inutile non chiedersi se ciò che stiamo facendo è giusto dopo che abbiamo fatto mille passi in avanti. Bisogna piuttosto fare le cose in modo giusto evitando di sbagliare.
+![[Screenshot 2024-10-30 alle 08.43.02.png]]
+**Necessità**: tutto ciò che porto nel design e implementation ci deve essere per una ragione
+**Sufficienza**: garantisce che noi finiamo con il minimo necessario, (*keyword* PB->MVP *minimum viable product* cioè io fornitore mi fermo nel primo punto in cui finisco i miei requisiti obbligatori).
+# Attività di analisi dei requisiti
+- Studio dei bisogni e del dominio d'uso
+- Comprensione del problema dal lato dei bisogni
+	- Approfondimento tramite *scenari* di caso d'uso
+- Raggruppamento degli scenari per affinità
+	- Entro "*parti del sistema*" verso le quali agiscono specifici bisogni
+	- Approfondendo quelle parti gerarchicamente
+- Valutazione di fattibilità tecnologica -> che impatto ha la tecnologia sui miei requisiti questa è anche vincolo
+	- Noi la chiamiamo **_Technology Baseline_** (*Mark Zuchemberg che reinventa il modello cliente servente per facebook*)
+- Classificazione e tracciamento dei requisiti
+	- In dialogo con proponente e committente (*stakeholder*)
+## Processi di supporto all'analisi
+- **Documentazione**
+	- Per raccogliere i risultati dell'analisi: **AdR**
+	- Per dialogare con il committente
+	- Per avviare consapevolmente la progettazione(*design*) -> *Quanta sovrapposizione mettere tra analisi dei requisiti e design*
+- **Verifica di adesione al _way of working_** -> Costruire un evidenza che ci aiuti ad arrivare a Validazione senza nessun problema
+	- Cruscotto di verifica della qualità: **PdQ**
+- **Gestione e manutenzione dei prodotti dell'analisi**
+	- Tracciamento dei requisiti
+	- Gestione di verbale e configurazione
+	- Gestione dei cambiamenti
+### Per una buona analisi
+- La specifica dei requisiti deve essere: *specifica parola tecnica per la parola descrizione, prevalentemente la specifica nel nostro mondo è narrativa ma questo può essere un problema*
+	- Priva di ambiguità (*gli altri la devono capire come la capisco io*, rischio di ambiguita sia super attenuato e non travisi il significato)
+	- Corretta 
+	- Completa 
+	- Verificabile (*come faremo a dire che è soddisfatta*) 
+	- Consistente
+	- Modificabile 
+	- Tracciabile (*Identificatori, tipo requisito di sicurezza 3*)
+	- Ordinata per rilevanza
+- Per questo conviene ridurre i requisiti a *grana di fine*
+	- Affinando e suddividendo i requisiti utente
+	- Aggiungendone, ampliando lo sguardo sul problema
+### Tecniche di analisi
+- Dominio d'uso come fonte di requisiti impliciti
+	- A quali bisogni risponde il prodotto atteso?
+	- Per che tipo di utenti, con quali aspettative?
+- Vi sono molti requisiti *nascosti*
+	- La *classificazione dei requisiti* aiuta a scovarli
+- Acquisizione di conoscenze: interviste al committente
+	- Costruzione, analisi e discussione di scenari: decisioni riassunte in verbali
+- Acquisizione di conoscenze: *brainstorming* (*da fare quando non abbiamo una risposta ma tanti frammenti di risposta* MOLTO UTILE)
+	- Paritario
+	- Arbitrato
+	- E con lo scriba
+- Consolidamento delle conoscenze di dominio **glossario** *in modo da unificare le definizioni e rendere le cose che diciamo uniformi a tutti*
+- Valutazione di fattibilità tecnologica (*milestone* **TB**)
+### Classificazione dei requisiti
+![[Screenshot 2024-10-30 alle 09.36.57.png]]
+- I requisiti hanno diversa rilevanza e utilià, che va negoziata e concordata con il committente
+	- **Obbligatori** (*non ci si può presentare a PB senza questi*)
+		- Irrinunciabili per qualcuno degli *stakeholder*
+	- **Desiderabili**
+		- Non strettamente necessari ma a valore aggiunto riconoscibile
+	- **Opzionali**
+		- Relativamente utili oppure contrattabili più avanti nel progetto
+- **NON devono essere tra loro contraddittori**
