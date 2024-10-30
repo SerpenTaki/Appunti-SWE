@@ -31,7 +31,7 @@
 - La risposta al <u>come</u> viene dalla progettazione (*design*)
 - L'analisi dei requisiti deve comprendere a fondo i bisogni
 	- Cosa deve succedere per rispondere alle richieste fatte al prodotto
-- I **diagrammi dei casi d'uso** hanno questa prospettiva
+- I [[Diagrammi Dei Casi D'uso]] hanno questa prospettiva
 	- Relazione tra *attore* chi ha l'aspettativa e *sistema* chi ha le risposte all'aspettativa (*o parte del prodotto su cui ho aspettativa*)
 	- Cosa posso chiedere, cosa deve succedere-> *che cosa deve succedere sul quale agire*
 	- Le *user story* ne sono il corrispondente agile (*dialogo con un verbale tra utilizzatore utente e destinatario*, quindi catturiamo scenari d'uso)
