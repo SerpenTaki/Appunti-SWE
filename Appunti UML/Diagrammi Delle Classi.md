@@ -27,4 +27,18 @@ Indicano la **Specifica Tecnica** e di conseguenza *definiscono un prodotto*
 	- Convenzioni dei gruppi di programmazione
 		- Esempio: *Getter e Setter* per ogni attributo
 - **Associazioni**
-	- Anche se etiche
+	- Anche se etichettata con verbo, meglio *renderla* con un *nome*
+	- *Evitare* le associazioni *bidirezionali*
+		- Di chi è la responsabilità di aggiornare la relazione?
+![[Screenshot 2024-10-30 alle 17.48.44.png]]
+# Operazioni
+- Le *azioni* che la classe "sa *eseguire*"
+	- Aspetto *comportamentale*
+	- *Servizio* che può essere richiesto ad ogni istanza della classe
+	- Direzione: **in, out, inout** (default **in**)
+	- Visibilità: `+` pubblica, `-` privata, `#` protected
+- Query
+- Modificatori
+- Operazione != metodo
+	- Concetti differenti presenza di *polimorfismo*
+- 
