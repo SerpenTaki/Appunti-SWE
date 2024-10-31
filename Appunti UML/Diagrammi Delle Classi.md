@@ -41,4 +41,47 @@ Indicano la **Specifica Tecnica** e di conseguenza *definiscono un prodotto*
 - Modificatori
 - Operazione != metodo
 	- Concetti differenti presenza di *polimorfismo*
-- 
+![[Pasted image 20241031192711.png]]
+##### Commenti e Note
+- Informazioni *aggiuntive*
+	- Singole e solitarie
+	- Legate a qualsiasi elemento grafico
+		- *Linea tratteggiata*
+# Relazione di Dipendenza
+> Si ha *dipendenza* tra 2 elementi di un diagramma se la *modifica alla definizione* del *primo* (fornitore) può *cambiare la definizione del secondo* (client)
+
+- UML permette di modellare ogni sorta di dipendenza
+	- Non è una proprietà transitiva!
+- Le dipendenze vanno *minimizzate*!
+	- *Loose coupling*
+- Da inserire solo quando danno valore aggiunto
+	- Troppe dipendenze creano confusione nel diagramma
+![[Pasted image 20241031193322.png]]
+> Maggiore è la quantità di *codice condiviso* fra 2 tipi, maggiore è la *dipendenza* fra essi
+
+- La dipendenza tra 2 tipi è direttamente proporzionale alla probabilità di *modificare* entrambi
+$$
+\delta_{A\rightarrow B} \propto P(B_{mod}|A_{mod})
+$$
+- La dipendenza è quindi una funzione di numero *SLOC* condivise e di *ampiezza dello scope* del codice condiviso
+$$
+\delta_{A\rightarrow B} = \frac{\phi S_{A|B}}{\phi_{S_{tot_{B}}}}
+$$
+![[Pasted image 20241031194031.png]]
+![[Pasted image 20241031194051.png]]
+# Aggregazione e Composizione
+**Aggregazione**
+- Relazione di tipo "_parte di_"
+	- Gli *aggregati* possono essere *condivisi*
+![[Pasted image 20241031194201.png]]
+**Composizione**
+- Come aggregazione, ma:
+	- Gli aggregati appartengono ad un *solo aggregato*
+	- Solo l'oggetto intero può *creare* e distruggere le sue *parti*
+![[Pasted image 20241031194339.png]]
+![[Pasted image 20241031194415.png]]
+- Aggiungono *attributi* e *operazioni* alle associazioni
+	- Esiste *solo una* istanza della classe associazione fra i 2 oggetti
+![[Pasted image 20241031200428.png]]
+# Classi di Associazione
+28/43
