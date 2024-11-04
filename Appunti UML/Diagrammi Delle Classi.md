@@ -83,5 +83,62 @@ $$
 - Aggiungono *attributi* e *operazioni* alle associazioni
 	- Esiste *solo una* istanza della classe associazione fra i 2 oggetti
 ![[Pasted image 20241031200428.png]]
-# Classi di Associazione
-28/43
+![[Screenshot 2024-11-04 alle 13.24.39.png]]
+
+# Generalizzazione
+![[Screenshot 2024-11-04 alle 13.25.39.png]]
+# Classi Astratte
+- Classe Astratta `{abstract}`
+	- Classe che *non può essere istanziata*
+		- Operazione *astratta* non ha implentazione
+		- Altre operazioni possono avere implementazione
+![[Screenshot 2024-11-04 alle 13.32.35.png]]
+# Interfacce
+![[Screenshot 2024-11-04 alle 13.50.49.png]]
+![[Screenshot 2024-11-04 alle 13.52.25.png]]
+# Classificazione e Generalizzazione
+- Sottotipo ≠ "è un" (IS A)
+
+| **Generalizzazione**         | **Classificazione**         |
+| ---------------------------- | --------------------------- |
+| Un *Border Collie* è un cane | *Shep* è un *Border Collie* |
+| I cani sono animali          | *Border Collie* è una razza |
+| I cani sono una specie       |                             |
+- **Generalizzazione**
+	- Proprietà transitiva
+		- La classificazione non lo è!
+- **Classificazione**
+	- Dipendenza `<<instantiate>>`
+# Caratteristiche Varie
+- Operazioni e attributi *statici*
+	- Applicabili alla classe, non all'oggetto
+		- *Sottolineati* sul diagramma
+- Parole chiave
+	- Estensione della semantica UML
+		- Costrutto simile + parola chiave
+		- `<<interface>> {abstact}`
+- Responsabilità
+	- Funzionalità offerte
+	- Aggiunta alla classe con commento
+- Proprietà Derivate
+	- Possono essere *calcolate a partire* da *altri valori*
+		- Definiscono un *vincolo* fra valori
+		- Si indicano con "/" che precede il nome della proprietà
+- Proprietà *read only* e *frozen*
+	- `{readOnly}`
+		- *Non* vengono forniti i *servizi di scrittura*
+	- `{frozen}`
+		- Immutabile, *non può variare* nel suo ciclo di vita
+![[Screenshot 2024-11-04 alle 14.48.48.png]]
+![[Screenshot 2024-11-04 alle 14.49.09.png]]
+![[Screenshot 2024-11-04 alle 14.49.24.png]]
+![[Screenshot 2024-11-04 alle 14.49.42.png]]
+![[Screenshot 2024-11-04 alle 14.50.43.png]]
+# Diagrammi degli oggetti
+- Grafo delle *istanze*, comprensivo di associazioni e valori delle proprietà
+`nome dell'istanza : nome della classe`
+	- *Fotografia* degli oggetti che compongono un sistema
+	- *Non* ci sono parti *obbligatorie*
+	- Specifica di istanza
+		- Anche di classi astratte, omissione dei metodi, ecc..
+![[Screenshot 2024-11-04 alle 14.53.45.png]]
