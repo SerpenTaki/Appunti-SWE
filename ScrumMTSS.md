@@ -27,7 +27,6 @@ software funzionante* più che *documentazione ampia* (il framework non è una g
 Risposta al cambiamento* più che *seguire un piano*
 #### Sprint
 
-![[scrum.png]]
 I progetti Scrum progrediscono attraverso una serie di "Sprint", analoghi alle iterazioni della Extreme Programming (altra pratica agile)
 - Durata tipica 2-4 settimane
 - Una durata costante favorisce un ritmo migliore
@@ -37,7 +36,7 @@ I progetti Scrum progrediscono attraverso una serie di "Sprint", analoghi alle i
 Le fasi di _requisiti_, _progetto_, _codifica_ e _test_ che si verificano nel framework **a staffetta** vengono in pratica affrontate anche nel framework Scrum, ma per ogni fase di Sprint. 
 **Non si cambia durante lo Sprint**:  una volta che sono stati fissati i goal dello sprint, nel 99% dei casi nello sprint si sviluppa una certa funzionalità, se si interrompe si va ad allungare i tempi. 
 
-![[Pasted image 20240323154500.png]]
+
 ##### Revisione e rischi Sprint 
 - Lo Sprint backlog può essere chiarito e rinegoziato tra il Product Owner e il team di sviluppo non appena si conosce di più
 - La durata dello Sprint assicura che il rischio di scostarsi da quanto chiesto dal product owner sia limitato alla durata dello sprint
@@ -115,7 +114,7 @@ Si tratta di un incontro giornaliero di 15 minuti, è un evento veloce che si sv
 - Partecipa tutto il gruppo i lavoro, è una riunione interna, il product owner è escluso. 
 	- Scrum master
 	- Development Team
-![[Pasted image 20240323160300.png]]
+
 ### Artefatti
 ##### Product Backlog
 - I requisiti, funzionalità, miglioramenti, fix da realizzare nei prossimi rilasci
@@ -155,7 +154,7 @@ Sono gli Item che compongono il Product Backlog e andranno scomposte in Task
 - *Testable*:
 	- Can be automated
 	- Avoid external testing / long test suites
-![[Pasted image 20240323161026.png]]
+
 ### Sprint backlog
 - Ogni componente del *Development Team* si sceglie qualcosa da fare
 	- Il lavoro non è mai assegnato
@@ -165,7 +164,7 @@ Sono gli Item che compongono il Product Backlog e andranno scomposte in Task
 - Se il lavoro non è chiaro, definire un elemento dello sprint backlog con una stima temporale più ampia, e decomporlo successivamente
 - Aggiornare il lavoro rimanente man mano che diventa più chiaro
 - Massima visibilità della *scrumboard*
-![[Pasted image 20240323161555.png]]
+
 #### Definition of Done
 Definisce il significato di "FATTO" per uno Sprint Item
 - Il minimo set i attività per definire che un'attività è completata 
@@ -173,7 +172,7 @@ Definisce il significato di "FATTO" per uno Sprint Item
 - Deve essere ben chiaro per tutti i membri del gruppo di lavoro 
 - È utilizzato per verificare se un'attività è da ritenersi completata 
 
-![[Pasted image 20240323161714.png]]
+
 #### Acceptance criteria
 Permette di confermare se la storia è completa e funziona come voluto
 - Frasi semplici condivise da Product Owner e Development Team
@@ -184,7 +183,6 @@ Permette di confermare se la storia è completa e funziona come voluto
 		<i>A user cannot submit a form without completing all the mandatory fields. information from the form is stored in the registrations database. An acknowledgment email is sent to the user after submitting the form</i>
 	</center>
 
-![[Pasted image 20240323161757.png]]
 #### Scalabilità di Scrum 
 - Tipica dimensione del team è 7 (± 2) persone
 	- Scalabilità gestita come “team di team”
@@ -194,5 +192,3 @@ Permette di confermare se la storia è completa e funziona come voluto
 	- Distribuzione del team
 	- Durata del progetto
 - Scrum è già stato utilizzato per progetti 500+ persone (Scrum of scrums)
-
-$\rightarrow$ vai a [[Testing]]
