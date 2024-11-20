@@ -137,3 +137,50 @@ in un progetto tutte le attività sono collegate e ognuna di esse certifica il l
 	- **Opzionali**
 		- Relativamente utili oppure contrattabili più avanti nel progetto
 - **NON devono essere tra loro contraddittori**
+![[Screenshot 2024-11-20 alle 08.42.25.png]]
+![[Screenshot 2024-11-20 alle 08.42.37.png]]
+- Separazione netta tra analisi e *design* si ha solo con lo sviluppo sequenziale
+- In ogni altro caso le 2 attività evolvono in parziale sovrapposizione e dialogo tra loro
+	- Noi le facciamo avvicinare nel convergere verso la *milestone __RTB__*
+- La prassi XP suggerisce che il *design* evolva per fattorizzazioni successive
+- Perseguendo sempre semplicità nella soluzione
+	- Un *design* semplice richiede poco codice *il meno possibile*
+	- Questo è un ottimo indicatore di *assenza di* semplicità
+### Documentazione dell'analisi
+- La documentazione in linguaggio naturale genera rischi di ambiguità interpretativa
+	- Servono norme redazionali per evitare espressioni ambigue
+	- Glossario per garantire terminologia consistente
+- Uso di metodi *semi-formali* aiuta a ridurre gli errori di interpretazione
+	- Diagrammi e formule (**UML**) invece di testo e disegni in stile libero
+	- **_User story_** strutturate
+![[Screenshot 2024-11-20 alle 08.49.02.png]]
+- **Ricercare chiarezza espressiva**
+	- L'uso del linguaggio naturale rende difficile coniugare chiarezza con facilità di lettura
+- **Ricercare chiarezza strutturale**
+	- Separazione tra requisiti funzionali e non-funzionali
+	- Classificazione precisa, uniforme e accurata
+- **Ricercare atomicità e aggregazione**
+	- Requisiti elementari
+	- Correlazioni chiare ed esplicite
+### Verifica dell'analisi
+- Eseguita su un documento organizzato
+	- Non ripete il lavoro di analisi, ma si accerta che esso sia stato svolto in modo conforme alle attese
+- Tramite **walkthrough**
+	- Lettura a largo spettro
+- Oppure **ispezione**
+	- Lettura mirata a struttura basata su liste di controllo (**_checklist_**)
+- Accertando necessità e sufficienza dei requisiti specificati
+	- Esaminando la matrice delle dipendenze (*documentazione di tracciamento*)
+# Stadi di progresso per SEMAT
+- **Conceived**
+	- Il committente è identificato e gli *stakeholder* vedono sufficienti opportunità per il progetto
+- **Bounded**
+	- I bisogni macro sono chiari, i meccanismi di gestione dei requisiti (configurazione e cambiamento) sono fissati
+- **Coherent**
+	- I requisiti sono classificati e quelli essenziali (*obbligatori*) sono chiari e ben definiti
+- **Acceptable**
+	- I requisiti fissati definiscono un sistema soddisfacente per gli *stakeholder*
+- **Addressed**
+	- Il prodotto soddisfa i principali requisiti al punto da poter meritare rilascio e rischio
+- **Fulfilled**
+	- Il prodotto soddisfa abbastanza requisiti da meritare la piena approvazione degli *stakeholder*
