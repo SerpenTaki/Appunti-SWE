@@ -51,4 +51,23 @@
 - A una singola unità architetturale possono corrispondere uno o più **moduli** di codice
 - La corrispondenza *Unità-Modulo* è determinata dalle caratteristiche del linguaggio utilizzato per la realizzazione
 	- *Es: una classe Java, modulo sintattico del linguaggio, può ben corrispondere a una unità archittetturale*
-- 
+- Le unità architetturali realizzano le componenti dell’architettura logica
+	- La decomposizione delle componenti architetturali in unità ne facilità la realizzazione
+- **Tracciare l'architettura nel codice** porta 2 benefici
+	- Aiuta la verifica di copertura dei requisiti, rendendola più diretta e circoscritta
+	- Guida l'integrazione delle prodotto SW, dalle sue singole parti al tutto
+- La specifica di ogni unità architetturale deve essere ben documentata affinchè la sua programmazione possa svolgersi in modo autonomo e disciplinato 
+	- Assicurando tracciamento di requisiti dall'architettura logica verso le singole unità
+- La responsabilità di realizzare singole unità ne include la verifica
+	- Per questo il SW si misura in termini di *delivered source lines of code*
+![[Screenshot 2024-11-20 alle 09.55.58.png]]
+# Approcci di progettazione
+- Procedimento *Top-down*
+	- Studio il prodotto immaginando le parti in cui può essere <u>decomposto</u>
+	- Senza elementi preconcetti: esplorazione funzionale (*cosa deve succedere e cosa mi serve per farlo succedere*)
+- Procedimento *Bottom-up*
+	- Concepisco il prodotto ipotizzando le parti che possono <u>comporlo</u> (*cosa certe singole parti possono fare di utile*)
+	- Tipico dell'OOP, fortemente orientato a riuso e specializzazione 
+- Procedimento *Agile*
+	- Perseguendo consolidamento progressivo (Ciclo *feedback - refactoring*) contando su una architettura base che non si rompa a seguito di aggiunte o rimozioni
+	- Utile anche alla cattura di requisiti resi più chiari e concreti dall'avanzamento della realizzazione.
