@@ -71,3 +71,63 @@
 - Procedimento *Agile*
 	- Perseguendo consolidamento progressivo (Ciclo *feedback - refactoring*) contando su una architettura base che non si rompa a seguito di aggiunte o rimozioni
 	- Utile anche alla cattura di requisiti resi più chiari e concreti dall'avanzamento della realizzazione.
+## Stili architetturali
+- L'attività di *design* apprende dall'esperienza (propria e di altri) per auto-migliorarsi
+	- Attraverso conoscenza e consolidamento di *stili architetturali*
+- Uno stile architetturale è un aggregato coerente
+	- Catalogo di componenti standard (*ricorrenti*)
+	- Regole che vincolano la composizione di tali componenti tra loro
+	- Significato semantico di tali composizioni
+	- Catalogo di verifiche di conformità su sistemi costruiti in tal modo
+![[Screenshot 2024-11-28 alle 17.04.17.png]]
+![[Screenshot 2024-11-28 alle 17.04.32.png]]
+![[Screenshot 2024-11-28 alle 17.04.51.png]]
+### Design pattern architetturali (DP)
+- Soluzione di *design* a qualche problema realizzativo ricorrente
+	- Organizzazione architetturale dotata di proprietà provate, ottenibili solo con buona contestualizzazione e coerente implementazione
+	- Corrispondente architetturale degli algoritmi
+- Individuare **DP** rilevanti al proprio problema favorisce riuso intelligente
+- I **DP** contribuiscono a specifici stili architetturali
+# Qualità di una buona architettura
+- **Sufficienza**
+	- Capace di soddisfare tutti i requisiti
+- **Comprensibilità**
+	- Capita da tutti gli *stakeholder*
+- **Modularità** ==!!!!==
+	- Suddivisa in parti chiare e ben distinte
+- **Robustezza**
+	- Capace di sopportare ingressi diversi (giusti, sbagliati, tanti, pochi) dall'utente e dall'ambiente senza rompersi
+- **Flessibilità**
+	- Permette modifiche a costo contenuto al variare dei requisiti
+- **Riusabilità**
+	- Le sue parti possono essere impiegate in altre applicazioni
+- **Efficienza**
+	- Nel tempo (CPU), nello spazio (RAM), nelle comunicazioni (banda)
+- **Affidabilità _(reliability)_** 
+	- È probabile che svolga bene il suo compito quando utilizzata
+- **Disponibilità _(availability)_** ==!!!!==
+	- La sua manutenzione, correttiva, adattiva, evolutiva, causa poca indisponibilità totale
+- **Sicurezza rispetto a malfunzionamenti (*safety*)
+	- Abbastanza ridondante da funzionare anche in presenza di guasti localizzati
+- **Sicurezza rispetto a intrusioni _(security)_**
+	- I suoi dati e le sue funzioni non sono raggiungibili da intrusi
+- **Semplicità** ==!!!!==
+	- Ogni parte contiene solo il necessario e niente di superfluo
+- **Incapsulazione (_information hiding_)** ==!!!!==
+	- L'interno delle componenti non è visibile dall'esterno
+- **Coesione** ==!!!!==
+	- Ciò che sta insieme concorre agli stessi obiettivi
+- **Basso accoppiamento** ==!!!!==
+	- Parti distinte dipendono poco o niente le une dalle altre
+#### Modularità
+- Minimizzare la dipendenza cattiva tra parti
+	- Distinguendo tra ciò che la parte deve esporre ai suoi utenti (*interfaccia*)
+	- E ciò che essa deve nascondere (*implementazione*)
+	- Esponendo metodi `get()`e `set()`come unica modalità di accesso ai dati
+- Evitando rischio di effetto domino
+	- Quando la modifica interna di una parte impone modifiche all'esterno di sè
+- Secondo D.Parnas vi sono 2 vie per modularizzare
+	1. Suddividere l'attività nei suoi blocchi logici principali
+	2. Suddividere ricercando *information hiding* _(riduce i cambiamenti esterni causati da modifiche interne rispetto a 1.)_
+#### Availability
+- Un sistema monolitico va ricostruito 
