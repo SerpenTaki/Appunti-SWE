@@ -130,4 +130,71 @@
 	1. Suddividere l'attività nei suoi blocchi logici principali
 	2. Suddividere ricercando *information hiding* _(riduce i cambiamenti esterni causati da modifiche interne rispetto a 1.)_
 #### Availability
-- Un sistema monolitico va ricostruito 
+- Un sistema monolitico va ricostruito  per intero ad ogni piccolo cambiamento (*modifica, aggiunta, rimozione*) e poi va sostituito dal nuovo
+	- Durante la sostituzione e le conseguenti verifiche di buon esisto, il sistema diventa indisponibile
+#### Semplicità
+![[Screenshot 2024-11-28 alle 17.42.55.png]]
+#### Incapsulazione
+- Rendere invisibile all'esterno l'interno delle componenti architetturali
+	- Nascondendo la loro implementazione (dati e operazioni) all'esterno, rendendola *black box*
+- Esporre solo l'interfaccia, nascondendo gli algoritmi e le strutture dati per realizzarla
+- Questo principio porta importanti benefici
+	- L'esterno non può fare assunzioni sull'interno
+	- Diventa più facile fare manutenzione sull'implementazione senza danneggiare gli utenti
+	- Minori le dipendenze indotte sull'esterno maggiore il beneficio di riuso
+#### Coesione
+- Funzionalità *Vicine* stanno nella stessa componente
+	- Ciò che serve per soddisfare il contratto di interfaccia
+- Va massimizzata per ottenere
+	- Maggiore manutenibilità e riusabilità
+	- Minore interdipendenza fra componenti
+	- Architettura del sistema più comprensibile
+- Ricercare modularità spinge a decomporre sempre di più: la ricerca di coesione limita questa spinta
+##### Tipi di coesione
+- **Funzionale**: quando le parti concorrono allo stesso compito
+	- ES *produttore/consumatore*
+- **Temporale:** quando azioni sono *vicine* tra loro per ordine di esecuzione
+	- ES *pipeline*
+- **Informativa** quando le parti agiscono sulle stesse unità dati
+	- ES `get()`e `set()`su una struttura dati
+- Secondo D. Parnas, la coesione migliore è quella che produce maggiore incapsulazione (*information hiding*)
+	- **SIAGAS**
+		- Sistema in uso per la gestione degli stage
+		- Molte parti del suo codice realizzano la stessa micro-funzionalità: fare calcoli, leggere/scrivere lo stesso dato
+			- Complica moltissimo la manutenzione
+			- Una correzione locale non sana tutte le occorrenze del problema e può causare effetti laterali inattesi su altre
+			- Progettazione non buona, realizzazione pigra
+		- Quali rimedi?
+			- Ricercare modularizzazione, coesione, incapsulazione
+### Accoppiamento
+- Quando parti diverse hanno dipendenze reciproche cattive
+	- l'esterno fa assunzioni sul funzionamento dell'interno (variabili, tipi, indirizzi,...) e quindi cerca scorciatoie
+	- L'estreno impone vincoli sull'interno (ordine di azioni, uso di certi dati, formati, valori), limitando il potenziale di riuso futuro
+	- Esterno e interno agiscono su *alias* della stessa entità
+- Questo accoppiamento va minimizzato
+- Un sistema è un insieme organizzato che ha bisogno di tutte le sue parti
+	- Quindi ha sempre un po' di accoppiamento che la buona progettazione tiene basso
+- Proprietà esterna di componenti
+	- Il grado $U$ di utilizzo reciproco di $M$ componenti
+	- $U = M \times M$ è il massimo grado di accoppiamento
+	- $U = \emptyset$ ne è il minimo
+- **Metriche**: *fan-in* e _fan-out_ strutturale
+	- **SFIN** è indice. di utilità $\rightarrow$ massimizzare
+	- **SFOUT** è indice di dipendenza $\rightarrow$ minimizzare
+- Buona progettazione ha componenti con **SFIN** elevato
+## Stati di progresso per SEMAT
+- **Architecture selected**
+	- Selezione di una architettura tecnicamente adatta al problema: Accordo sui criteri di selezione
+	- Selezione delle tecnologie necessarie
+	- Decisioni su *buy, build, make*
+- **Demonstrable**
+	- Dimostrazione delle principali caratteristiche dell'architettura: gli *stakeholder* concordano
+	- Decisione sulle principali interfacce e configurazioni di sistema
+- **Usable**
+	- Il sistema è utilizzabile e ha le caratteristiche desiderate
+	- Il sistema può essere operato dagli utenti
+	- Le funzionalità e le prestazioni richieste sono state verificate e validate
+	- La quantità di difetti residui è accettabile
+- **Ready**
+	- La documentazione per l'utente è pronta
+	- Gli *stakeholder* hanno accettato il prodotto e vogliono che diventi operativo
