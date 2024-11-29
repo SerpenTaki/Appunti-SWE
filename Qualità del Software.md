@@ -97,3 +97,55 @@
 - Richiede osservanza e vigilanza
 	- Facilità parallelismo nella realizzazione
 #### Avvertenze
+- L'**astrazione** omette informazione per poter applicare operazioni simili a entità diverse
+	- Ciò che è caratteristico dell'intera gerarchia è fissato in radice
+	- Ciò che differenzia si aggiunge per specializzazione allontanandosi dalla radice
+- L'astrazione è usabile solo tramite concretizzazione
+	- Per parametrizzazione (*da template a entità concreta C++*)
+	- Per specializzazione (*da interfaccia a classe in Java e C++*)
+	- Per valorizzazione (*da classe a oggetto tramite costruttore in OOP*)
+- La *concorrenza* di una buona qualità aiuta a decomporre il sistema in più entità autonome garantendo
+	- Efficienza di esecuzione
+	- Atomicità di azione
+	- Consistenza e integrità dei dati condivisi
+	- Semantica precisa di comunicazione e serializzazione
+	- Predicibilità di ordinamento temporale
+- La **distribuzione** di buona qualità ripartisce il sistema in programmi disseminati su nodi distinti garantendo
+	- Bilanciamento di carico
+	- Frugalità nelle comunicazioni (*buon grado di autonomia*)
+- Eventi ed errori critici emergono più facilmente in presenza di concorrenza o distribuzione
+	- Per evitarli servono alcune accortezze
+- In relazione al flusso di controllo
+	- Saper determinare l'ingresso in un particolare stato
+- In relazione al trascorrere del tempo
+	- Saper determinare l'arrivo di un certo istante temporale
+- Mai fare assunzioni ottimistiche
+# Dalla Progettazione alla Codifica
+**Enforce intensions**
+- Rendere chiaro *nel codice* il confine tra esterno e interno dei moduli
+- Decidere chiaramente e codificare coerentemente ciò che può essere specializzato
+	- Rendere il resto immodificabile (`final, const...`)
+- Proteggere tutto ciò che non deve essere visto acceduto dall'esterno
+	- `private, protected...`
+- Decidere quali classi possono produrre istanze e quali no
+	- Usare il *pattern* **Singleton** per le classi a istanza singola
+
+>Il singleton è un [design pattern creazionale](https://it.wikipedia.org/wiki/Design_pattern#Pattern_creazionali "Design pattern") che ha lo scopo di garantire che di una determinata classe venga creata _una e una sola_ istanza, e di fornire un punto di accesso globale a tale istanza.
+
+**Defensive programming**
+- Programmare esplicitamente il trattamento dei possibili errori
+- Nei dati in ingresso
+	- Verificarne la legalità prima di usarli
+- Nella logica funzionale
+	- Preservarne proprietà (*invarianti, pre/post-condizioni,...*)
+- Definire la strategia di trattamento degli errori (*error handling*) è compito della progettazione
+### Gestire gli errori nei dati in ingresso
+- Possibili tecniche di trattamento
+	- Attendere fino all'arrivo di un valore legale
+	- Assegnare un valore predefinito (*default*)
+	- Usare un valore precedente
+	- Registrare un valore precedente
+	- Registrare l'errore in un *log* persistente
+	- Sollevare una eccezione gestita
+	- Abbandonare il programma
+
