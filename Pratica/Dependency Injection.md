@@ -1,0 +1,1 @@
+![[Screenshot 2024-12-02 alle 15.36.56.png]]
