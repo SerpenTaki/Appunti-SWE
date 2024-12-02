@@ -1,5 +1,6 @@
 # SWE
-Appunti del corso di ingegneria del software
+Appunti del corso di ingegneria del software 24-25.
+Questi appunti sono studiati e progettati per essere fruibili tramite Obsidian.
 
 ---
 ### Teoria
