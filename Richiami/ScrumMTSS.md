@@ -83,7 +83,6 @@ Le fasi di _requisiti_, _progetto_, _codifica_ e _test_ che si verificano nel fr
 flowchart LR
 A[Pianificatore di vacanze:<br> voglio vedere le foto degli alberghi] --> B("Scrivere lo strato business (8)<br>Scrivere l'interfaccia utente (4)<br>Scrivere le test fixtures (4)<br>Scrivere la classe java (6)<br>Aggiornare i performance tests")
 ```
-![[Pasted image 20240323155759.png]]
 ### Daily scrum (stand-up meeting)
 Si tratta di un incontro giornaliero di 15 minuti, è un evento veloce che si svolge solitamente in piedi, in modo da non doversi sedere e rendere la riunione prolissa.
 - Non ha finalità di risoluzione problemi, ma di sincronizzazione su quanto fatto e pianificare la giornata per il raggiungimento dello Sprint goal
