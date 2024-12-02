@@ -86,4 +86,38 @@ Le applicazioni prive di un'architettura formale sono generalmente accoppiate, f
 	- Nessuna trasformazione orchestrazione o instradamento complesso
 		- Da non confondere con le applicazioni orientate ai servizi
 	- Non è richiesto un accesso basato su REST
-	- Si trova nelle applicazioni aziendali 
+	- Si trova nelle applicazioni aziendali  più grandi
+- Controllo sofisticato del livello di trasporto
+	- Meccanismi avanzati di accodamento, messaggistica asincrona, monitoraggio, gestione degli errori...
+		- Evitare il singolo punto di guasto e il collo di bottiglia architettonico
+![[Screenshot 2024-12-02 alle 15.25.46.png]]
+### Services Granularity
+- La sfida principale consiste nel definire la giusta *granularità* dei componenti del servizio
+	- Servizi a grana grossa 
+		- non sono facili da distribuire, scalare, testare e non sono a coppia libera
+	- Servizi a grana troppo-fine
+		- Richiedono un'orchestrazione trasformandosi in un'applicazione SOA
+		- Richiedono una comunicazione interservizi per elaborare una singola richiesta
+- Usare la comunicazione con il *database*
+	- Evitare la comunicazione `service-to-service`
+- Violazione del principio DRY
+	- Replicare alcune funzionalità per mantenere l'indipendenza tra i vari servizi
+		- Nessuna condivisione della logica di business
+- È il pattern giusto per la vostra architettura?
+	- NO, se non riuscite a evitare l'orchestrazione dei componenti dei servizi.
+	- Nessuna definizione di unità di lavoro transazionale
+		- A causa della natura distribuita del pattern
+		- L'uso del framework delle transazioni aggiunge troppa complessità
+##### Considerazioni
+- Robustezza, migliore scalabilità, fornitura continua
+	- Componente applicativo di dimensioni ridotte, distribuito separatamente
+		- Risolve molti problemi delle architetture monolitiche e SOA
+- Distribuzioni di produzione in tempo reale
+	- È possibile distribuire solo i componenti di servizio modificati
+		- Reindirizzamento a una pagina di errore/di attesa
+		- Disponibilità continua (*hotdeploy*)
+- Problemi di architettura distribuita
+	- Creazione e manutenzione di contratti, disponibilità del sistema remoto, autenticazione dell'accesso remoto, ...
+![[Screenshot 2024-12-02 alle 15.33.39.png]]
+![[Screenshot 2024-12-02 alle 15.33.51.png]]
+![[Screenshot 2024-12-02 alle 15.34.17.png]]
