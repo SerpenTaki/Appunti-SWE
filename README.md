@@ -12,10 +12,12 @@ Appunti del corso di ingegneria del software
 - [[Qualità di processo]] T8
 - [[Verifica e Validazione]] T9-T10
 - [[Testing]] T11
-- 
 
 ----
 ### Pratica
 - [[Dependency Management]] e [[OOP Revisited]]
 - [[Diagrammi Dei Casi D'uso]] --> [[Diagramma dei Casi d'uso lezione .pdf]]
 - [[Diagrammi Delle Classi]] --> [[Diagramma delle classi 211024.pdf]]
+- [[Diagramma Delle Attività]] --> [[Diagrammi delle attività .pdf]]
+- [[Pattern architetturali]] --> [[Architecture Pattern .pdf]] --> [[Domini.pdf]]
+- [[Dependency Injection]] -->
