@@ -17,3 +17,73 @@ Le applicazioni prive di un'architettura formale sono generalmente accoppiate, f
 		- *Presentation, Business, Persistence, Database*
 ![[Screenshot 2024-12-02 alle 11.14.46.png]]
 ## Separation of Concerns
+- Ogni livello costituisce un'*astrazione* su una particolare richiesta aziendale
+	- I componenti all' interno di uno specifico livello si occupano solo di logica che riguarda quel livello
+- La classificazione dei componenti semplifica la costruzione di modelli di ruoli e responsabilità efficaci
+	- Gli ambiti limitati dei componenti facilitano lo sviluppo, il test e la gestione, il governo e la manutentibilità di tali applicazioni
+- Interfacce dei componenti ben definite
+### Concetti chiave
+- I livelli devono essere chiusi (*layer isolation*)
+	- Una richiesta di spostamento da un livello ad un altro livello immediatamente sotto di esso
+	- Le modifiche apportate in un livello generalmente non hanno impatto o componenti di altri livelli
+- Anche i livelli possono essere apreti
+	- Immaginate un livello di servizio sotto il livello business dovrebbe passare attraverso il livello di servizio per accedere al livello di persistenza
+		- I livelli aperti dovrebbero essere ben documentati
+![[Screenshot 2024-12-02 alle 12.25.51.png]]
+![[Screenshot 2024-12-02 alle 12.26.06.png]]
+- Un buon punto di partenza per molte applicazioni
+	- È un solido modello per uso generale
+- **L'architettura _sinkhole anti-pattern_**
+	- le richieste fluiscono attraverso più livelli come semplici pass-throug
+	- Proporzione di 80-20 di percorsi buoni rispetto a *wrt sinkhole path*
+- Tende a prestarsi ad applicazioni *monolitiche*
+	- Potrebbe essere un problema in termini di distribuzione, robustezza e affidabilità.
+![[Screenshot 2024-12-02 alle 12.31.17.png]]
+# Microservices Architecture
+- Un pattern in continua evoluzione
+	- Un alternativa valida al *monolite* ed architetture *service-oriented*
+	- Unità distribuita separatamente
+		- Distribuzione più semplice, maggiore scalabilità, elevato grado di disaccoppiamento.
+- Componenti di un servizio
+	- Da un singolo modulo a una grande porzione di applicazione
+		- Scegliere il giusto livello di granularità dei componenti del servizio è una delle maggiori sfide
+	- **Distribuito:** _remote access protocol_
+		- `JMS, AMQP, REST, SOAP, RMI,..`
+## EVOLUTIONARTY PATHS
+- Evoluto da problemi associati ad altre architetture
+	- Dal *monolitico*: aperto a *continous delivery*
+		- Evitare i cicli di *deployment mensili* a causa dello stretto accoppiamento tra i componenti 
+		- Ogni componente del servizio è sviluppato, testato e distribuito in modo indipendente e distribuito
+	- Da SOA: *semplificazione* della nozione di servizio
+	- La SOA è un modello potente, che promette di allineare gli obiettivi di business obiettivi aziendali con le capacità IT
+	- Costoso, onnipresente, difficile da comprendere/implementare
+	- Elimina le esigenze di orchestrazione, limitandosi alla connettività
+![[Screenshot 2024-12-02 alle 15.05.55.png]]
+![[Screenshot 2024-12-02 alle 15.06.09.png]]
+![[Screenshot 2024-12-02 alle 15.06.17.png]]
+![[Screenshot 2024-12-02 alle 15.06.36.png]]
+## API REST-Based Topology
+- Utile per is siti web che offrono piccoli servizi
+	- I componenti del servizio sono a grana fine
+		- Funzione aziendale specifica, indipendente dal resto
+			- Uno o 2 moduli
+		- *Microservizi*
+- Questi servizi sono acceduti tramite API
+	- REST-based interface
+		- Livello API basato sul web distribuito separatamente
+		- Google, Amazon, Yahoo cloud-based RESTful web service
+![[Screenshot 2024-12-02 alle 15.11.38.png]]
+- Accesso diretto da client fat / web based
+	- L'interfaccia utente viene distribuita separatamente
+	- Interfaccia basata su REST
+		- Non è necessario uno strato API intermedio
+- Più grandi e a grana grossa
+	- Rappresentano una piccola parte dell'applicazione aziendale complessiva
+		- Comune per le applicazioni aziendali di piccole e medie dimensioni
+![[Screenshot 2024-12-02 alle 15.13.25.png]]
+## Centralized Message Topology
+- Broker di messaggi centralizzato e leggeto
+	- Nessuna trasformazione orchestrazione o instradamento complesso
+		- Da non confondere con le applicazioni orientate ai servizi
+	- Non è richiesto un accesso basato su REST
+	- Si trova nelle applicazioni aziendali 
