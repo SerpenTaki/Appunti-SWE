@@ -7,6 +7,8 @@
 	- Verifica costante, preventiva prima che reattiva
 	- Valutazione riproducibile e quindi automatizzata
 	- Disposizione costante al miglioramento
+>nell' esempio il controllo equivale al cruscotto. Piano di qualifica congegna il cruscotto, il piano di qualifica fornisce informazioni a Piano di Progetto, Il luogo dove possiamo vedere il cruscotto è sicuramente il Repository,
+Il repository è  il luogo dove si alimenta il cruscotto.
 ![[Screenshot 2024-11-29 alle 13.15.08.png]]
 - Prima di definire i processi (nel *way of working*)
 	- Per poter applicare coerentemente le loro attività
@@ -36,7 +38,7 @@
 - Un processo ad alto livello di **capability**
 	- È seguito da tutti in modo disciplinato, sistematico e quantificabile
 - L'intelligenza dei processi di una organizzazione si chiama **_governance_**
-	- Sapere il perchè delle proprie scelte, per efficacia, efficienza e relazione con le *best practice
+	- Sapere il perchè delle proprie scelte, per efficacia, efficienza e relazione con le *best practice*
 	- Visione sul futuro
 ![[Screenshot 2024-11-29 alle 13.31.03.png]]
 ![[Screenshot 2024-11-29 alle 13.31.27.png]]
