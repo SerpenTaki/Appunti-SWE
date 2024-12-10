@@ -118,4 +118,118 @@ public static void main(String[] args){
 	- Container è una struttura `Map<String, Object>`
 - Utilizza semplici POJO: *Bean*
 	- Supporta sia constructor, che setter injection
-- Configurazione XML //Slide 14 di 27
+- Configurazione XML 
+	- `org.springframework.beans.factory.BeanFactory`
+		- Implementazione del pattern _factory_, costruisce e *risolve le dipendenze*
+	- `org.springframework.context.ApplicationContext`
+		- Costruita sulla bean factory, fornisce ulteriori funzionalità
+			- AOP, transazionalità,...
+```Java
+ApplicationContext ctx = new ClassPathXmlApplicationContext("com/sringinaction/springidol/filename.xml");
+//...
+MovieLister ml = (MovieLister) ctx.getBean("movieLister");
+```
+- Configurazione XML
+	- *Dependenncy injection* attraverso _proprietà_
+		- Utilizzo di metodi *setter* e *getter*
+```XML
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+	<bean id="movieLister" class="MovieLister">
+		<!-- La classe ha come proprietà finder -->
+		<property name="finder" ref="movieFinder"/>
+	</bean>
+	<bean id="movieLister" class="MovieLister">
+		<property name="file" value="movies.csv"/>
+	</bean>
+</beans>
+```
+- Configurazione XML
+	- *Dependency injection* attraverso *costruttori*
+		- Spring risolve automaticamente la scelta del costruttore
+	- Oppure factory methods, init, destroy methods
+```XML
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+	<bean id="movieLister" class="MovieLister">
+		<!-- La classe ha come proprietà finder -->
+		<constructor-arg ref="movieFinder"/>
+	</bean>
+	<bean id="movieLister" class="MovieLister">
+		<constructor-arg value="movies.csv"/>
+	</bean>
+</beans>
+```
+- Configurazione Java
+	- `@Configuration` dichiara una classe configurazione
+	- `@Bean` dichiara un *Bean*
+````Java
+@Configuration
+public class MovieConfig{
+	@Bean
+	public MovieLister lister(){
+		return new MovieLister (finder()); //Constructor Injection
+	}
+	@Bean
+	public MovieFinder finder(){
+		return new ColonMovieFinder("movies.csv");
+	}
+}
+ApplicationContext ctx = new AnnotationConfigApplicationContext(MovieConfig.class);
+````
+- **Wiring** utilizzando *annotazioni*
+	- Permette una gestione migliore della configurazione in *progetti grandi*
+	- Introduce una *dipendenza* da *framework* esterni
+		- `@Autowired`
+		- `@Inject`, annotazione JSR-330
+		- `@Resource`, annotazione JSR-250
+````XML
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+</beans>
+	<context:annotation-config/>
+	<context:component-scan base-package="org.example"/>
+````
+- **Wiring** utilizzando *annotazioni*
+	- `@Inject/@Autowired`
+		- Ricerca per *tipo* il *bean* della proprietà e lo usa come *id*
+		- Si utilizza su costruttori, proprietà,...
+		- Il bean *non* deve essere *ambiguo*
+			- Disambiguazione tramite `@Named` per l'ID
+````Java
+@Inject
+private Instrument instrument;
+
+@Inject
+@Named("guitar") //Fornisce nome differente dal tipo
+private Instrument instrument2;
+````
+- **_Autodiscovery_**
+	- `@Component, @Controller, @Service,...`
+## JavaScript
+- **_Dependency injection in JavaScript_**
+	- *Container* è una mappa `[string, function]`
+		- Linguaggio non tipizzato staticamente
+		- Non ha interfacce esplicite
+	- JS è strutturato a moduli (*module pattern*)
+		- *Injection* di oggetti o interi moduli
+	- Esistono diverse librerie (*API*) per la DI
+		-  RequireJS/AMD - http://requirejs.org/
+		- Inject.js - http://www.injectjs.com/
+		- AngularJS (framework) - https://angularjs.org/
+### AngularJS 1.6
+- JavaScript *framework*
+	- *Client-side*
+	- *Model-View-Whatever*
+		- MVC per alcuni aspetti (controller)
+		- MVVM per altri (two-way data binding)
+	- Utilizza **HTML** come linguaggio di *templating*
+		- Non richiede operazioni di DOM *refresh*
+			- Controlla attivamente le azioni utente, eventi del *browser*
+	- *Dependence Injection*
+		- Fornisce ottimi strumenti di test
+- slide 22/27
