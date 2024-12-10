@@ -232,4 +232,95 @@ private Instrument instrument2;
 			- Controlla attivamente le azioni utente, eventi del *browser*
 	- *Dependence Injection*
 		- Fornisce ottimi strumenti di test
-- slide 22/27
+- Dependency injection
+	- `$provide`: risolve le *dipendenze* fra le componenti
+		- Viene invocato direttamente da Angular al *bootstrap*
+````JavaScript
+//provide the wiring information in a module
+angular.module('myModule', []).
+	//Teach the injector how to build a 'greeter'
+	//Notice that greeter itself is dependent on '$window'
+	factory('greeter', function($window){
+	// This is a factory functionn, and is responsible for creating the 'greet' service.
+	return{
+		greet: function(text){
+			$window.alert(text);
+		}
+	};
+	});
+
+//Request any dependency from the $injector
+angular.injector(['myModule', 'ng']).get('greeter');
+````
+![[Pasted image 20241210215429.png]]
+- Dependency Injection
+	- Factory methods: *costruiscono* le componenti
+		- Utilizzano *recipe* (*ricette*)
+````JavaScript
+angular.module('myModule', []).
+	config(['depProvider', function(depProvider){
+	...
+	}]);
+	factory('serviceId', ['depService', function(depService){
+	...
+	}]);
+	directive('directiveName', ['depService', function(depService){
+	...
+	}]);
+	filter('filterName', ['depService' , function(depService){
+	...
+	}]);
+	run(['depService', function(depService){
+	...
+	}]);
+````
+## Scala
+- Cake Pattern
+	- Utilizzo di una notazione dedicata (*self-type annotation*) e dei trait per dichiarazione delle dipendenze e la loro risoluzione
+````Scala
+trait FooAble{
+	def foo() = "I am a foo!"
+}
+class BarAble { this: FooAble => //self-type annotation
+	def bar = "I am a bar and " + foo()	   
+}
+val barWithFoo = new BarAble with FooAble //mixin
+````
+- Utilizzo di contenitori dedicati per risolvere le dipendenze
+	- Divisione dei concetti di *business* dai dettagli tecnici
+````Scala
+// Declares a repository
+trait UserRepositoryComponent {
+	val userRepository: UserRepository
+	class UserRepository {
+		def findAll() = Array[User]() // fake implementation
+		def save(user: User) = "Saving a user..." // fake implementation
+	}
+}
+// Declares a service that needs a repository
+trait UserServiceComponent { this: UserRepositoryComponent =>
+	val userService: UserService
+	class UserService {
+		def findAll() = userRepository.findAll
+		def save(user: User) = userRepository.save(user)
+	}
+}
+// Configuration object that binds dependencies
+object ComponentRegistry extends
+	UserServiceComponent with UserRepositoryComponent {
+	// Dependency injection
+	val userRepository = new UserRepository
+	val userService = new UserService
+}
+````
+
+> Dependency Injection means giving an object its own instance variables. Really. That's it.
+>Dependency Injection significa dare a un oggetto le proprie variabili di istanza. Davvero. Tutto qui.
+>-- James Shore
+- Vantaggi
+	- Migliora la fase di testing
+		- Isolamento delle componenti -> *Maggior riuso*
+	- Migliora la *resilienza* del codice
+		- Manutenzione e correzioni componenti specifiche
+	- Migliora la *flessibilità*
+		- La disponibilità di più componenti simili permette di scegliere a *runtime* la migliore
