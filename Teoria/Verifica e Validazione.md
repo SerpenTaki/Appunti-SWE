@@ -161,3 +161,5 @@
 Fine T9
 
 ---
+
+# Analisi Statica
