@@ -41,6 +41,74 @@
 	- Nel garantire esaustività
 	- Nel documentare le risultanze
 - Modalità relativamente complementari tra loro
+---
 # Walkthrough
 ### Definizione
-- 
+- **Atteggiamento**
+	- Non sappiamo (*ancora*) dove è più probabile che vi siano difetti
+- **Obiettivo**
+	- Rilevare difetti attraverso lettura critica <u>ad ampio spettro</u> dell'oggetto in esame
+- **Attori**
+	- Gruppi misti autori/sviluppatori, con ruoli distinti tra loro
+- **Strategia**
+	- Esame privo di assunzioni o presupposti
+- **Modalità**
+	- Percorrere il codice simulandone possibili esecuzioni
+	- Studiare ogni parte di documento, come farebbe un compilatore
+### Attività
+1. **Pianificazione**
+	- Autori e verificatori
+2. **Lettura**
+	- Solo verificatori
+3. **Discussione**
+	- Autori e verificatori
+4. **Correzione dei difetti**
+	- Solo autori
+- **Ogni passo verbalizza attività svolte e risultanze**
+---
+# Inspection
+### Definizione
+### Definizione
+- **Atteggiamento**
+	- Sappiamo cosa cercare
+- **Obiettivo**
+	- Rilevare La presenza di difetti eseguendo lettura <u>mirata</u> dell'oggetto di verifica
+- **Attori**
+	- Verificatori
+- **Strategia**
+	- Esame focalizzato su presupposti (*error guessing*)
+- **Modalità**
+	- Sapendo cosa cercare permette maggiore automazione della ricerca
+### Attività
+1. **Pianificazione**
+2. **Definizione _Lista di controllo_**
+	- Cosa vada verificato selettivamente
+3. **Lettura**
+4. **Correzione dei difetti**
+	- A carico degli autori
+- **Ogni passo documenta attività svolte e risultanze**
+---
+## Ambiente di prova
+- I *Test* devono essere **ripetibili**: per questo specificano
+	- Ambiente d'esecuzione: HW/SW, stato iniziale
+	- Attese: Ingressi richiesti, uscite ed effetti attesi
+	- Procedure: esecuzione, analisi dei risultati
+- I *Test* vanno **automatizzati:** perciò usano strumentazione
+	- *Driver* Componente attiva fittizia per pilotare il test
+	- *Stub* Componente passiva fittizia per simulare parti del sistema utili al test ma non oggetto di test
+	- *Logger* Componente non intrusivo di registrazione dei dati di esecuzione per analisi dei risultati
+![[Screenshot 2024-12-11 alle 16.55.09.png]]
+---
+**Glossario**
+- **Unità**
+	- La più piccola quantità di SW che sia utilmente sottoponibile a verifica come oggetto singolo
+	- Tipicamente prodotta da un singolo programmatore
+	- In senso architetturale: non linee di codice ma entità di organizzazione logica
+		- Singola procedura, singola classe, piccolo aggregato (*package*) coeso
+- Il **modulo** (come determinato dal linguaggio di programmazione) è una frazione dell'unità
+- Il **componente** integra più unità correlate e coese
+---
+![[Screenshot 2024-12-11 alle 16.58.33.png]]
+![[Screenshot 2024-12-11 alle 16.58.46.png]]![[Screenshot 2024-12-11 alle 16.59.01.png]]
+## Test di unità
+[[Unit Testing]]
