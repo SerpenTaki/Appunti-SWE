@@ -88,6 +88,7 @@
 	- A carico degli autori
 - **Ogni passo documenta attività svolte e risultanze**
 ---
+[[Testing]]
 ## Ambiente di prova
 - I *Test* devono essere **ripetibili**: per questo specificano
 	- Ambiente d'esecuzione: HW/SW, stato iniziale
@@ -112,3 +113,36 @@
 ![[Screenshot 2024-12-11 alle 16.58.46.png]]![[Screenshot 2024-12-11 alle 16.59.01.png]]
 ## Test di unità
 [[Unit Testing]]
+- È agevolato da attività mirate di analisi statica
+	- Limiti di iterazioni, flusso di esecuzione, valori di variabili,....
+- Consente altro grado di parallelismo e automazione nello svolgimento
+- Per le unità più semplici, può essere assegnato ai loro rispettivi autore
+	- Altrimenti meglio assegnarlo a verificatore indipendente
+- Accerta la correttezza del codice <<**as implemented**>>
+	- Mai modificare il sorgente del codice cui si esegue test
+### La risoluzione dei problemi
+- Per scovare problemi e risolverli tempestivamente
+- La soluzione dei problemi attiene al processo di supporto <<**_Problem resolution_**>> di ISO/IEC 122017, che si occupa di
+	- Sviluppare una strategia di gestione dei problemi
+	- Registrare ogni problema rilevato e classificarlo in uno storico così da ricordarne l'occorrenza e la risoluzione
+	- Analizzare ogni problema e determinare soluzioni accettabili
+	- Realizzare la soluzione scelta
+	- Verificare l'esito della correzione
+	- Assicurare che tutti i problemi già emersi siano sotto gestione
+## Test Di Regressione
+- Modifiche effettuate per aggiunta, correzione o rimozione, non devono pregiudicare le funzionalità già verificate,
+- Se lo fanno, causano **regressione**
+	- Il rischio di regressione aumenta all'aumentare dell'accoppiamento e al diminuire dell'incapsulazione
+- I *Test* di regressione comprende tutti i test necessari ad accertare che la modifica di una parte $P$, $S$ o in ogni altra parte $X$ del sistema che sia in relazione con $S$
+	- Ripetendo *test* già specificati e già eseguiti
+## Test Di Integrazione
+- Per costruzione e verifica incrementale del sistema
+	- Quando l'integrazione incrementale di componenti sviluppati in parallelo realizza funzionalità di livello sistema
+	- La *build* incrementale è totalmente automatizzabile
+	- In condizioni ottimali l'integrazione è priva di problemi
+- Quali problemi rileva
+	- Errori residui nella realizzazione dei componenti
+	- Modifica delle interfacce o cambiamenti nei requisiti
+	- Riuso di componenti dal comportamento oscuro o inadatto
+	- Integrazione con altre applicazioni non ben conosciute 
+![[Screenshot 2024-12-11 alle 17.14.16.png]][[Integrazione Continua]]
