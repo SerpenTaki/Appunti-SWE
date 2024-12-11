@@ -146,3 +146,18 @@
 	- Riuso di componenti dal comportamento oscuro o inadatto
 	- Integrazione con altre applicazioni non ben conosciute 
 ![[Screenshot 2024-12-11 alle 17.14.16.png]][[Integrazione Continua]]
+---
+## Test di sistema e collaudo
+- **Validazione**
+	- Test di sistema come attività interna del fornitore
+		- Per accettarne la copertura dei requisiti SW in preparazione al collaudo
+	- Collaudo come attività supervisionata dal committente
+		- Per dimostrare conformità del prodotto alle attese attraverso casi di prova implicati dal capitolato
+- **Collaudo**
+	- Attività formale di fronte al committente
+	- Al suo buon esito consegue rilascio finale del prodotto
+![[Screenshot 2024-12-11 alle 17.19.35.png]]
+![[Screenshot 2024-12-11 alle 17.19.46.png]]
+Fine T9
+
+---
