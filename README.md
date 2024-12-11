@@ -21,4 +21,4 @@ Questi appunti sono studiati e progettati per essere fruibili tramite Obsidian.
 - [[Diagrammi Delle Classi]] --> [[Diagramma delle classi 211024.pdf]]
 - [[Diagramma Delle Attività]] --> [[Diagrammi delle attività .pdf]]
 - [[Pattern architetturali]] --> [[Architecture Pattern .pdf]] --> [[Domini.pdf]]
-- [[Dependency Injection]] -->
+- [[Dependency Injection]] --> [[Dependencies Injection.pdf]]

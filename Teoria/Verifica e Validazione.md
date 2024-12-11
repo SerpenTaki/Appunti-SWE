@@ -88,7 +88,7 @@
 	- A carico degli autori
 - **Ogni passo documenta attività svolte e risultanze**
 ---
-[[Testing]]
+[[Testing Mtss]]
 ## Ambiente di prova
 - I *Test* devono essere **ripetibili**: per questo specificano
 	- Ambiente d'esecuzione: HW/SW, stato iniziale
