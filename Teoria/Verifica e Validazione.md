@@ -158,8 +158,151 @@
 	- Al suo buon esito consegue rilascio finale del prodotto
 ![[Screenshot 2024-12-11 alle 17.19.35.png]]
 ![[Screenshot 2024-12-11 alle 17.19.46.png]]
-Fine T9
 
 ---
 
 # Analisi Statica
+- Un SW di qualità deve possedere
+	- Tutte le capacità **funzionali** attese, che specificano **cosa** il sistema debba fare
+	- Tutte le caratteristiche **non-funzionali** necessarie affinchè il sistema lavori sempre **come** previsto
+- Dimostrarlo richiede accertare il possesso di svariate proprietà
+	- **Di costruzione**: architettura, codifica, integrazione
+	- **D'uso:** esperienza utente, precisione, affidabilità
+	- **Di funzionamento:** prestazioni, robustezza, sicurezza
+![[Screenshot 2024-12-29 alle 13.53.20.png]]
+![[Screenshot 2024-12-29 alle 13.54.16.png]]
+![[Screenshot 2024-12-29 alle 13.54.25.png]]
+![[Screenshot 2024-12-29 alle 13.54.46.png]]
+- La codifica deve *aiutare* la verifica, non ostacolarla
+	- Pochi linguaggi di programmazione la facilitano davvero
+	- Per questo serve imporre disciplina di programmazione
+- L'uso di funzionalità *oscure* ostacola l'accertamento di **integrità**
+	- L'integrità è la qualità di fare quanto atteso nel modo atteso, sempre
+	- La programmazione non può essere ottimistica *(non sono sicuro ma spero che funzioni...)*
+- Le norme di codifica devono bilanciare la ricchezza di funzionalità con le garanzie di integrità
+## Scrivere programmi verificabili
+- Dotarsi di norme di codifica coerenti con le esigenze di verifica
+	- Promuovendo buone prassi e ponendo vincoli sui costrutti di programmazione inappropriati
+	- Verificandone attivamente il rispetto
+- La verifica retrospettiva è <u>insufficiente</u>
+- **Il costo di rilevazione e correzione di errori cresce con l'avanzare dello sviluppo**
+![[Screenshot 2024-12-29 alle 14.03.37.png]]
+- L'approccio reattivo alla verifica è ingenuo, pigro e ottimistico
+	- *Hoping for correctness by correction*
+- È più saggio sostenere lo sviluppo con scelte consapevoli e verifica sistematica: approccio costruttivo
+	- *Pursuing correctness by construction*
+- Regolamentare l'uso del linguaggio di programmazione tramite principi da riflettere nelle Norme di Progetto
+	1. Per assicurare <u>comportamento predicibile</u>
+	2. Per usare buoni <u>principi di programmazione</u>
+	3. Per <u>ragioni pragmatiche</u>
+- Vediamo ciascuna di queste 3 dimensioni
+### 1. Comportamento predicibile
+- Codice sorgente senza ambiguità
+	- Effetti laterali (*p.es. di sottoprogrammi*)
+		- Invocazioni della <u>stessa</u> azione che producano effetti <u>diversi</u>
+	- Ordine di elaborazione e inizializzazione
+		- L'effetto del programma può dipendere dall'ordine di **elaborazione** o l'ordine di **esecuzione** delle sue parti
+		- *Esempio:* impredicibilità nell'attivazione di *thread*
+	- Modalità di passaggio dei parametri
+		- La scelta di una modalità di passaggio (per valore, per riferimento) può influenzare l'esito dell'esecuzione
+```Java
+class Swapper{
+	public static void swap(int Left, int Right){
+		int tmp = Left;
+		Left = Right;
+		Right = tmp;
+	}
+
+	public static void main(String args[]){
+		int Source = 1;
+		int Destination = 3;
+		swap(Source, Destination);
+	}
+}
+//In Java, in nomi sono riferimenti, ma le chiamate sono per valore
+```
+### 2. Principi di Programmazione 
+- ==Riflettere l'architettura (*design*) nel codice==
+	- Usare programmazione strutturata per esprimere componenti, moduli, unità come da progettazione, e facilitare l'integrazione
+- ==Separare le interfacce dall'implementazione==
+	- Fissare bene le interfacce a partire dall'architettura logica
+	- Esporre le interfacce, nascondere l'implementazione
+- ==Massimizzare l'incapsulazione (*information hiding*)==
+	- Usare membri privati e metodi pubblici per l'accesso ai dati
+- ==Usare tipi specializzati per specificare dati==
+	- La composizione e la specializzazione aumentano il potere espressivo del sistema di tipi del programma
+### 3. Considerazioni pragmatiche
+- L'efficacia dei metodi di verifica è funzione della qualità di strutturazione del codice
+	- **Esempio:** una procedura con <u>un solo</u> punto di uscita facilita l'analisi del suo effetto sullo stato del sistema
+- La verifica di un programma mette in relazione segmenti di codice con porzioni di specifica
+	- La verificabilità dipende inversamente dall'ampiezza del contesto oggetto di verifica
+		- *Più è ampio il contesto, più è difficile e costoso verificare: confinare __scope__ e visibilità*
+	- Una buona architettura facilita la verifica
+		- P.es. Tramite incapsulazione dello stato e controllo di accesso
+## Tracciamento
+- Dimostra completezza ed economicità del prodotto
+	- Nessun requisito dimenticato
+	- Nessuna funzionalità superflua
+- Va applicato
+	- Su ogni passaggio della specifica (*ramo discendente*)
+	- A ogni passo di implementazione (*ramo ascendente*)
+- Va automatizzato il più possibile
+	- Per limitarne il costo all'aumentare della sua intensità
+![[Screenshot 2024-12-29 alle 14.39.13.png]]
+- Tracciare i requisiti su progettazione di dettaglio e codifica aiuta a valutare il costo di verifica
+	- Assegnare $N$ requisiti elementari a 1 singolo modulo SW richiede almeno $N$ procedure di prova per quel modulo (1 prova per 1 requisito aiuta a rendere le prove decidibili)
+	- Al crescere di $N$ crescono la criticità e il costo di quel modulo
+- Maggiore il potere espressivo di un costrutto, maggiore la sua complessità di esecuzione, maggiore il costo di dimostrarlo corretto
+	- Basso potere espressivo: addizione tra interi, ..
+	- Alto potere espressivo: attivazione di *thread*, invocazione di API esterne,...
+# Tipi di Analisi statica del Codice
+- Flusso di controllo
+- Flusso dei dati
+- Verifica di limite
+- Uso dello *stack*
+- Comportamento temporale
+#### Analisi di flusso di controllo
+- Per accertare 
+	- Logica: l'esecuzione avverrà nella sequenza specificata
+	- Visibilità e propagazione: il codice è ben strutturato
+- Per localizzare codice non raggiungibile
+- Per identificarre rischi di non terminazione
+	- L'analisi dell'albero delle chiamate (*call-tree analysis*) mostra se l'ordine di chiamata corrisponda alla specifica
+	- E segnala la presenza di ricorsione diretta o indiretta
+	- La modifica di variabili di controllo delle iterazioni è fonte di vulnerabilità rispetto alla terminazione
+#### Analisi di flusso dei dati
+- Per accertare che nessun cammino d'esecuzione del programma acceda a variabili non valorizzate 
+	- Concentrando l'analisi di flusso di controllo sulla sequenza di accesso alle variabili e sue modalità (lettura, scrittura)
+- Per rilevare possibili anomalie
+	- Scritture successive senza lettura intermedie
+	- Letture che precedano scritture
+- Per accertare l'assenza di variabili globali
+	- E di altre violazioni al principio di incapsulazione
+#### Analisi di limite
+- Per verificare che i valori del programma restino sempre entro i limiti del loro tipo e della precisione desiderata
+- L'**_overflow_** produce valori maggiori del massimo rappresentabile
+	- Può causare eccezioni o silenziosamente produrre valori errati
+- L'**_underflow_** produce valori più piccoli del minimo rappresentabile
+	- Può causare eccezioni o grande perdita di precisione
+- Rispetto dei limiti nell'accesso a strutture dati (*range checking*)
+- Alcuni linguaggi permettono di assegnare limiti statici a tipi discreti per facilitare verifica sulle corrispondenti variabili
+	- Più difficile farlo con tipi enumerati e reali
+#### Analisi d'uso di *stack*
+- Per determinare la massima domanda di *stack* richiesta a tempo d'esecuzione in relazione con la dimensione della memoria assegnata all'esecuzione del programma
+- Per verificare che non vi sia rischio di collisione tra *stack* e *heap* per qualche esecuzione
+##### Stack & Heap
+- Lo *stack* è la memoria usata per ospitare dati locali e indirizzi di ritorno generati dal compilatore alla chiamata di sottoprogrammi
+	- Ogni flusso di controllo (*main, thread*) ha il suo *stack*
+	- La sua dimensione cresce con l'annidamento di chiamate
+	- I dati in esso hanno chiare regole di visibilità e ciclo di vita
+- L'*heap* è la memoria usata per tutto il resto (globale)
+	- Dimensione fissata prima dell'avvio del programma
+	- Contenuto determinato dalla quantità di oggetti globali creati durante l'esecuzione del programma
+	- Regole di visibilità e ciclo di vita difficili da controllare
+![[Screenshot 2024-12-29 alle 17.02.23.png]]
+#### Analisi Temporale
+- Per studiare le dipendenze temporale (latenza) tra le uscite del programma e i suoi ingressi
+	- Per verificare che il valore giusto sia prodotto al momento giusto
+- Limiti espressivi dei linguaggi e delle tecniche di programmazione complicano questa analisi
+	- Iterazioni prive di limite statico (*while*)
+	- Creazione dinamica di entità (*new*)
