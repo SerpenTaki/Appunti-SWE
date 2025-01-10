@@ -306,3 +306,119 @@ class Swapper{
 - Limiti espressivi dei linguaggi e delle tecniche di programmazione complicano questa analisi
 	- Iterazioni prive di limite statico (*while*)
 	- Creazione dinamica di entità (*new*)
+# Analisi Dinamica
+> La disciplina della tolleranza agli errori distingue tra un'azione umana errata (un errore), la sua manifestazione (un guasto hardware o software), il risultato del guasto (un fallimento) e la quantità di cui il risultato è errato (l'errore).
+
+```mermaid
+flowchart TD
+A[*mistake* : causa esterna al sistema]-->B{*Fault* : origine nel sistema}
+B-->C[*Failure* : effetto esterno non conforme]
+D[*Error* : Ampiezza della deviazione]-->C
+D-->B
+```
+- Il processore è fisico e può deperire fino a diventare *faulty*
+- Il SW non è materiale: ha natura immutabile
+	- Fa sempre e solo quello che il programma gli dice di fare
+	- Non si guasta da sè e quindi non diventa *faulty*
+- Ma il SW può fare la cosa sbagliata
+	- Causando (*failure*) di varia intensità (*error*)
+- Bisogna perciò assicurarsi che faccia la cosa giusta
+	- Questo è il compito della verifica del SW
+	- L'analisi statica precede e integra l'analisi dinamica (*i test*)
+##### Premesse
+- L'analisi dinamica consiste nell'esecuzione di oggetti di prova
+	- Cioè di programmi eseguibili che includono l'oggetto della prova
+- Ogni prova (*test*) è una esecuzione di un tale programma
+- Le prove studiano il comportamento di singole parti di codice (*oggetto di prova*) su un insieme **finito** di casi di prova
+- Il dominio di tutte le esecuzioni possibili è spesso **infinito**: per questo bisogna ridurlo senza rischiare omissioni significative
+- Ciascun caso di prova specifica
+	- I valori di ingresso al programma
+	- Lo stato iniziale atteso dell'esecuzione
+	- L'effetto atteso (oracolo) che decide l'esito dell'esecuzione
+- L'oggetto della prova può essere
+	- Il sistema nel suo complesso (**TS**)
+	- Parti di esso, in relazione funzionale, d'uso, di comportamento di struttura, tra loro (**TI**)
+	- Singole unità, considerate individualmente (**TU**)
+- L'obiettivo della prova deve essere
+	- Specificato in termini precisi e quantitativi
+	- Con esito decidibile in modo automatico
+- Il PdQ specifica <u>quali</u> e <u>quante</u> prove effettuare
+	- Per raggiungere il massimo **grado di copertura** possibile
+![[Screenshot 2025-01-10 alle 14.05.06.png]]
+### Criteri guida
+- La strategia di prova deve bilanciare costi e benefici
+	- Determinando la quantità <u>minima</u> di casi di prova sufficiente a garantire la qualità attesa
+	- Attenzione alla **legge del rendimento decrescente**
+- Il PdP determina la quantità <u>massima</u> di risorse assegnate alla verifica (quindi anche le prove)
+- Il PdQ fissa gli obiettivi <u>minimi</u> di qualità da raggiungere nella verifica (quindi nelle prove)
+	- Prima si fissa la strategia di prova (cosa, come, quanto)
+	- Poi la si correla con il piano delle attività
+- Il *test* è parte essenziale del processo di verifica
+- Produce una <u>misura della qualità</u> del prodotto
+	- La qualità aumenta (anche) con la rimozione di difetti
+- Le attività di *test* devono iniziare il prima possibile
+	- Al vertice basso della "V"
+	- Assistite da analisi statica, che non richiede esecuzione
+- Le esigenze di verifica devono essere assecondate dalla progettazione e dalla codifica
+	- Progettare, realizzare, eseguire i *test* è molto costoso
+	- Conviene renderlo più facile e produttivo possibile
+- Fare *test* significa eseguire programmi con l'intento di trovarvi i difetti
+- Fare *test* è costoso
+	- Tanto SW->Tante prove
+	- SW organizzato male o scritto male ostacola lo sviluppo e l'esecuzione delle prove
+- Progettiamo "*bene*", per dare ai moduli SW compiti chiari, specifici e circoscritti
+- Scriviamo SW semplice: la complessità è nemica della probabilità
+- Malfunzionamenti rilevati nei *test* rivelano la presenza di difetti
+- *Test* eseguiti senza errori non provano l'assenza di difetti
+- Le prove devono essere <u>riproducibili</u> per accertare
+	- Buon esito di correzione dei malfunzionamenti osservati
+	- Funzionamento non perturbato dall'avanzare della codifica
+- Le prove sono costose
+	- Richiedono molte risorse (tempo, persone, infrastrutture)
+	- Richiedono cicli di analisi, progettazione, codifica, correzione
+![[Screenshot 2025-01-10 alle 14.22.58.png]]
+## Gli elementi di una prova
+- Caso di prova (*test case*)
+	- Tupla {Oggetto di prova, ingresso richiesto, uscita attesa, ambiente di esecuzione e stato iniziale, passi di esecuzione}
+- Batteria di prove (*test suite*)
+	- Insieme di casi di prova
+- Procedura di prova
+	- Procedimento automatizzabile per eseguire prove e registrarne, analizzarne e valutarne i risultati
+- Prova
+	- Esecuzione (automatica) di procedura di prova
+- L'**oracolo**
+	- Metodo per determinare a priori i risultati attesi e per convalidare i risultati ottenuti nella prova
+	- Applicato da agenti automatici, per velocizzare la convalida e renderla oggettiva
+- Come produrre oracoli?
+	- Sulla base delle specifiche funzionali
+	- Entro prove semplici (facilmente decidibili)
+	- Tramite l'uso di componenti terze e fidate
+![[Screenshot 2025-01-10 alle 14.28.33.png]]
+### Test di unità
+[[Unit Testing]]
+- L'unità SW è composta da uno o più moduli
+- Unità e moduli sono elementi della progettazione di dettaglio
+- La codifica deve riflettere la progettazione
+	- L'architettura ha proprietà che è bene riflettere nel codice
+- Il piano di *UT o TU* nasce nel vertice basso del modello a V
+- Il *TU* completa quando ha verificato tutte le unità
+- Il *TU* è molto potente: rileva la maggior parte dei difetti di un prodotto
+- Vi sono 2 tipi di test:
+	1. **Funzionale _(black box)_**
+	2. **Strutturale _(white box)_**
+## Test funzionali _black box_
+- Fanno riferimento solo alla specifica ingressi-uscita dell'oggetto di verifica
+	- Non ne considerano la logica interna
+- Utilizzano dati di ingresso che corrispondono a specifici esiti
+- Dati di ingresso che producano lo *stesso* comportamento funzionale (**Classi di equivalenza**) formano un *singolo caso di prova*
+- I TU-F Contribuiscono al **_requirements coverage_**
+	- % di requisiti funzionali soddisfatti dal prodotto
+![[Screenshot 2025-01-10 alle 14.39.42.png]]
+## Test strutturali _white box_
+- verificano la logica interna del codice dell'oggetto di verifica
+	- Perseguendo alto grado di **_structural coverage_** in tutte le diverse dimensioni di questa misura
+- Un singolo caso di prova attiva un singolo *cammino di esecuzione* nell'oggetto di verifica
+	- Generando le condizioni logiche che causano la scelta di quel particolare cammino
+	- Il grado di *structural coverage* cresce con il numero di cammini traversati per ogni oggetto di verifica
+- Ogni caso di prova specifica l'insieme di dati di ingresso e la configurazione di ambiente che producono uno specifico cammino d'esecuzione
+### Dimensioni della _structural coverage_

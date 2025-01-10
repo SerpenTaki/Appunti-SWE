@@ -11,8 +11,8 @@ Questi appunti sono studiati e progettati per essere fruibili tramite Obsidian.
 - [[Progettazione software]] T6
 - [[Qualità del Software]] T7
 - [[Qualità di processo]] T8
-- [[Verifica e Validazione]] T9-T10
-- [[Testing]] T11
+- [[Verifica e Validazione]] T9-T10 *Analisi statica*
+- [[Verifica e Validazione#Analisi Dinamica]] T11 *Testing*
 
 ----
 ### Pratica
