@@ -16,11 +16,12 @@ Questi appunti sono studiati e progettati per essere fruibili tramite Obsidian.
 
 ----
 ### Pratica
-- [[Dependency Management]] e [[OOP Revisited]]
-- [[Diagrammi Dei Casi D'uso]] --> [[Diagramma dei Casi d'uso lezione .pdf]]
-- [[Diagrammi Delle Classi]] --> [[Diagramma delle classi 211024.pdf]]
-- [[Diagramma Delle Attività]] --> [[Diagrammi delle attività .pdf]]
-- [[Pattern architetturali]] --> [[Architecture Pattern .pdf]] --> [[Domini.pdf]]
-- [[Dependency Injection]] --> [[Dependencies Injection.pdf]]
-- [[Model-View Pattern]]
+- [[Dependency Management]] e [[OOP Revisited]] P1
+- [[Diagrammi Dei Casi D'uso]] --> [[Diagramma dei Casi d'uso lezione .pdf]] P2
+- [[Diagrammi Delle Classi]] --> [[Diagramma delle classi 211024.pdf]] P3
+- [[Diagramma Delle Attività]] --> [[Diagrammi delle attività .pdf]] P4
+- [[Pattern architetturali]] --> [[Architecture Pattern .pdf]] --> [[Domini.pdf]] P5
+- [[Dependency Injection]] --> [[Dependencies Injection.pdf]] P6
+- [[Model-View Pattern]] P7
+- [[Design Pattern Creazionali]] P8
 - 

@@ -72,9 +72,6 @@ essere eseguiti automaticamente in catene CI/CD.
 3. **Early testing**
 	- Avviare la fase di test il prima possibile permette di risparmiare sui costi del progetto
 	- Il processo di test non deve essere eseguito quando il progetto è al termine ma deve essere in parallelo allo sviluppo
-
-![[Screenshot 2024-04-18 alle 14.32.08.png]]
-![[Screenshot 2024-04-18 alle 14.32.27.png]]
 4. **Defect clustering**
 	- Durante i test si può osservare che la maggior parte dei difetti segnalati sono legati a un numero ridotto di moduli all'interno di un sistema
 	- Un piccolo numero di moduli contiene la maggior parte dei difetti nel sistema
@@ -90,11 +87,8 @@ essere eseguiti automaticamente in catene CI/CD.
 7. **Absence of errors fallacy**
 	- Solo perché il test non ha riscontrato alcun difetto nel software, non significa che il software sia perfetto e pronto per essere rilasciato. I test eseguiti sono stati davvero progettati per catturare il maggior numero di difetti?
 	- Il software corrispondeva ai requisiti dell'utente?
-- ![[Screenshot 2024-04-18 alle 14.44.06.png]]
 ### V-model
 Un modello di lifecycle dello sviluppo sequenziale che descrive una relazione uno a uno tra le principali fasi dello sviluppo software, dalla specifica dei requisiti aziendali alla consegna, e i corrispondenti livelli di test, dal testing di accettazione al testing dei componenti.
-
-![[Screenshot 2024-04-18 alle 14.46.28.png]]
 ### Component testing (Unit testing)
 - Verificano l'unità: il più piccolo sottosistema possibile (Java: classe o metodo) che può essere testato separatamente
 - Veloci da eseguire
@@ -123,6 +117,3 @@ Un modello di lifecycle dello sviluppo sequenziale che descrive una relazione un
 - Test suites su tutto il SUT, relativi agli use cases e ai requisiti concordati con l'utente finale/cliente
 - Svolti con l'utente finale/cliente
 - SUT è considerato come black box
-![[Screenshot 2024-04-18 alle 14.55.15.png]]
-
-$\rightarrow$ vai a [[Analisi Statica del codice]]

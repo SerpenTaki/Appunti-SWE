@@ -11,7 +11,7 @@ La fase di integrazione può richiedere molto tempo e nel caso peggiore, **nessu
 #### Definizione
 *"Continuous Integration doesn't get rid of bugs, but it does make them dramatically easier to find and remove." (Martin Fowler)*
 Consente a un Team di intensificare l'attività di sviluppo e test, **integrando gli sviluppi _(nel VCS)_ il più spesso possibile.**
-![[Screenshot 2024-05-07 alle 20.29.11.png]]
+
 ### Processo - visione generale
 - Al **completamento** di un'attività viene **costruito il prodotto:**
 	- Ogni volta che uno sviluppatore invia un commit al VCS viene eseguito il processo di build
@@ -24,7 +24,7 @@ Per implementare la pratica di CI è necessario che:
 2. Il **processo di build** del progetto sia **automatico**
 3. Il processo di build esegua delle **verifiche automatiche** (*test di unità, test di integrazione, analisi statica del codice*)
 4. il team di sviluppo adotti correttamente questa pratica
- ![[Screenshot 2024-05-10 alle 13.17.34.png]]
+ 
 ### Processo in dettaglio
 1. Controllo se il processo di build è in esecuzione nel sistema di CI. Se è in esecuzione aspetto che finisca, se fallisce lavoro con il team in modo da sistemare il problema.
 2. Quando il processo di build ha terminato con successo, aggiorno il codice nel mio workspace con il codice del VCS ed effetuo l'integrazione in locale
@@ -33,7 +33,7 @@ Per implementare la pratica di CI è necessario che:
 5. Attendo che il sistema di CI esegua il processo di build con i miei cambiamenti
 6. Se il processo di build fallisce mi fermo con le attività di sviluppo e lavoro per sistemare il problema in locale e riprendo dal passo 3.
 7. Se il processo di build termina con successo passo allo sviluppo dell'attività successiva
-![[Screenshot 2024-05-10 alle 13.22.10.png]]
+
 ### Integrare frequentemente gli sviluppi
 *più di una volta al giorno*
 in questo modo:
@@ -70,7 +70,7 @@ Lo stato della build deve essere pubblicato in un servizio visibile a tutto il t
 - Avere a disposizione un log per identificare quale parte del processo di build è fallita
 - Avere a disposizione la lista dei commit che hanno introdotto l'errore
 Il sistema di continuous integration deve poter avvisare i componenti del team ad ogni cambio di stato del processo. (*da successo a fallimento, da fallimento a successo*)
-![[Screenshot 2024-05-10 alle 14.54.35.png]]
+
 #### Principali caratteristiche di Jenkins
 - **Build Automation:** può automatizzare la costruzione del software attraverso script, facilitando la creazione di build consistenti e ripetibili
 - **Trigger Automatici:** può essere configurato per avviare automaticamente una build in base a eventi come il commit di codice su un repository, modifiche a determinati file, o in un momento prestabilito
@@ -99,6 +99,3 @@ Il sistema di continuous integration deve poter avvisare i componenti del team a
 - **Integrazioni con piattaforme cloud e strumenti DevOps:** può integrarsi con servizi cloud e strumenti DevOps
 - **Supporto per Esecuzione Parallela e Matrici:** consente di eseguire attività in parallelo e di definire "matrici" per eseguire build e test in diverse configurazioni.
 - **Integrazione con Notifiche e Servizi Esterni:** Offre integrazioni con servizi di notifica e può eseguire chiamate API a servizi esterni
-![[Screenshot 2024-05-10 alle 17.08.59.png]]
-
-$\rightarrow$ vai a [[Feedback Loop]]

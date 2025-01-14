@@ -59,12 +59,12 @@ Per essere ripetibili, i test di unità devono avere le seguenti caratteristiche
 ##### Independent
 I test di unità devono essere il più possibile **indipendenti dall'ambiente di esecuzione, degli elementi esterni al progetto e dall'ordine di esecuzione**. Quando si scrive un test è consigliato verificare il comportamento di un **singolo aspetto del progetto**. Questo non significa che un test di un'unità deve avere solo un'asserzione, ma deve controllare solo un metodo o più metodi che realizzano un aspetto di una funzionalità del progetto.
 Se il test è indipendente il suo comportamento sarà ripetibile nel tempo, perché il suo comportamento non dipenderà dalle altre unità del progetto. La ripetibilità del test è un aspetto che permette se il test è indipendente.
-![[Screenshot 2024-04-18 alle 17.39.28.png]]
+
 ##### Professional
 Poiché i test di unità sono codice, devono essere **scritti e manutenuti con la stessa professionalità del codice di produzione** del progetto.
 Visto che i buoni test di unità devono essere esaustivi, è ragionevole che il **numero di linee di codice** per realizzare i test sia **pari o a volte superiore** delle linee di codice in produzione.
 
-![[Screenshot 2024-04-18 alle 17.58.07.png]]
+
 ## Caratteristiche del framework
 Per creare i test di unità si sfruttano dei framework, con le seguenti caratteristiche:
 - Un modo per configurare l'ambiente di esecuzione del test
