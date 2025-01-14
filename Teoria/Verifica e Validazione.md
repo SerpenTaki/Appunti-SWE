@@ -422,3 +422,86 @@ D-->B
 	- Il grado di *structural coverage* cresce con il numero di cammini traversati per ogni oggetto di verifica
 - Ogni caso di prova specifica l'insieme di dati di ingresso e la configurazione di ambiente che producono uno specifico cammino d'esecuzione
 ### Dimensioni della _structural coverage_
+- Si ha **_Statement Coverage_** al 100%
+	- Quando l'insieme di test su uno stesso oggetto di verifica esegue almeno una volta tutti i suoi comandi (*statement*) con esito atteso
+- Si ha **_Branch Coverage_** al 100%
+	- Quando ogni singolo ramo (`then/else`) del flusso di controllo dell'oggetto di verifica viene attraversato almeno una volta da un test, con esito atteso
+- Si ha **_Decision/Condition Coverage_** al 100%
+	- Quando ogni condizione di ogni decisione (*branch*) assume almeno una volta entrambi i valori di verità in un *test* dedicato
+	- Questa metrica è più precisa della *branch coverage*
+	- È necessaria in presenza di espressioni di decisione complesse
+### Branch coverage
+- Il numero di percorsi linearmente indipendenti in una esecuzione con singolo ingresso e singola uscita (*unità*) è detto **complessità ciclomatica**, CC
+	- Cresce in presenza di *branch*, salti e iterazioni
+- La CC del grafo $G$ che descrive i flussi d'esecuzione all'interno dell'unità è $v(G) = e - n +p$ 
+	- $e$ numero degli archi in $G$ (_flusso tra comandi_)
+	- $n$ numero dei nodi in $G$ (_espressioni o comandi_)
+	- $p$ numero delle componenti connesse da ogni arco (_l'esecuzione sequenziale ha $p=2$, avendo 1 predecessore e 1 successore per ogni arco_)
+![[Screenshot 2025-01-14 alle 14.19.22.png]]
+![[Screenshot 2025-01-14 alle 14.19.48.png]]
+### _Condition-and-decision_ Coverage
+- **Condizione** è una espressione booleana semplice
+	- Le prove di ogni singola condizione devono produrre almeno un T e un F
+- **Decisione** _(branch)_ è una espressione composta da più condizioni
+	- Le prove di ogni singola decisione devono produrre almeno un T e un F
+- Il *branch coverage* effettivo (**_condition-and-decision coverage_**) copre singolarmente tutte le condizioni della decisione
+- Quanto più sia complessa la decisione, tanto più oneroso raggiungere un alto grado di *branch coverage* effettivo
+- La tecnica **_Modified Condition/Decision Coverage_** (MCDC) massimizza il _branch coverage_ effettivo con minor numero di prove
+![[Screenshot 2025-01-14 alle 14.25.27.png]]
+### Test di integrazione
+- Si applica alle componenti individuate nel *design* architetturale
+	- La loro integrazione totale costituisce il sistema completo
+- Rileva difetti di progettazione architetturale o bassa qualità di TU
+	- I dati scambiati attraverso ciascuna interfaccia concordano con la specifica?
+	- Tutti i flussi di controllo specificati sono stati verificati corretti?
+- Assembla incrementalmente, a ogni passo aumentando il valore funzionale disponibile
+	- Integrando componenti nuove in insiemi già verificati, i difetti rilevati da TI su tale passo sono più probabilmente da attribuirsi all'ultima aggiunta
+- Assicura che ogni passo di integrazione sia reversibile
+	- Potendo sempre retrocedere a un precedente stato sicuro (*baseline*)
+### Strategie di integrazione
+- Integrazione incrementale di tipo __*bottom-up*__
+	- Si sviluppano e si integrano prima le componenti con minori dipendenze d'uso e maggiore utilità interna
+		- Quelle che sono molto chiamate/attivate ma chiamano/attivano poco o nulla
+		- Quelle più interne al sistema, meno visibili a livello utente
+	- Questa strategia richiede pochi *stub* ma ritarda la messa a disposizione di funzionalità visibile all'utente
+- Integrazione incrementale di tipo **_top-down_**
+	- Si sviluppano e si integrano prima le componenti con maggiori dipendenze d'uso e quindi maggiore valore aggiunto esterno
+		- Quelle che chiamano/attivano più di quanto siano chiamate/attivate
+	- Questa strategia comporta l'uso di molti *stub* ma integra prima le funzionalità di più alto livello, più visibili all'utente
+### Test di sistema
+- Verifica come l'esecuzione del sistema soddisfi i requisiti SW (quelli della AdR)
+- Completa la misura di *requirements coverage* valutata a partire dai TU funzionali
+	- B.Meyer raccomanda che i TS includano tutti i casi di prova (TU,TI) che siano falliti almeno una volta
+- È funzionale (*black-box*)
+	- Non deve richiedere conoscenza della logica interna del SW
+	- I requisiti SW fissano l'aspettativa e non l'implementazione
+- Inizia al completamento del TI e precede il colladuo
+### Altri tipi di Test
+- _Test_ di regressione
+	- Accerta che correzioni o estensioni effettuate su specifiche unità non danneggino il resto del sistema
+	- Consiste nella ripetizione selettiva di TU, TI e TS
+		- Tutti i test necessari ad accertare che la modifica di una parte P di S non causi errori in P, in S, o in ogni altra parte del sistema in relazione con S
+	- Attua i processi **Problem Resolution** e **Change Management**
+		- Il primo valuta la necessità di modifiche (correttivo o adattive) e le approva
+		- Il secondo gestisce la buona realizzazione delle modifiche approvate
+- Test di accettazione (Collaudo)
+	- Accerta il soddisfacimento dei requisiti utente (quelli del capitolato) alla presenza del committente
+## Misure di coperta (coverage)
+- Dicono quanto le prove hanno "esplorato" il prodotto
+	- Copertura funzionale rispetto ai requisiti del prodotto
+	- Copertura strutturale rispetto alla sua logica interna
+- Quantificano la bontà della campagna di *test*
+	- Raggiungere il 100% di copertura complessiva può <u>non</u> essere possibile per ragioni di tempo/costo, complessità
+	- Più alta la copertura, più basso il rischio di difetti residui
+	- A ogni modo, raggiungere il 100% di copertura <u>non</u> garantisce assenza di difetti (ce lo dice Dijkstra)
+- Gli obiettivi di copertura sono specificati nel PdQ
+![[Screenshot 2025-01-14 alle 15.08.34.png]]
+![[Screenshot 2025-01-14 alle 15.08.47.png]]
+- gli errori gravi sono meno costosi di quelli più lievi
+	- Perchè quelli gravi sono trattati con più urgenza
+	- Quelli meno, spesso in modo più trascurato (poco attento o tardivo)
+- Correggere gli errori è molto costoso, quando farlo comporta modifiche architetturali
+- Il costo degli errori residui cresce *esponenzialmente* con l'avanzare del progetto
+- Il numero di errori rilevati cresce *linearmente con la durata del progetto*
+- Usare bene *Continuous Integration* [[Integrazione Continua]] focalizza meglio attività di sviluppo e amplia l'intesità di *test*
+![[Screenshot 2025-01-14 alle 15.12.58.png]]
