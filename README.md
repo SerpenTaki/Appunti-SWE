@@ -22,3 +22,5 @@ Questi appunti sono studiati e progettati per essere fruibili tramite Obsidian.
 - [[Diagramma Delle Attività]] --> [[Diagrammi delle attività .pdf]]
 - [[Pattern architetturali]] --> [[Architecture Pattern .pdf]] --> [[Domini.pdf]]
 - [[Dependency Injection]] --> [[Dependencies Injection.pdf]]
+- [[Model-View Pattern]]
+- 
