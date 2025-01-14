@@ -24,4 +24,6 @@ Questi appunti sono studiati e progettati per essere fruibili tramite Obsidian.
 - [[Dependency Injection]] --> [[Dependencies Injection.pdf]] P6
 - [[Model-View Pattern]] P7
 - [[Design Pattern Creazionali]] P8
-- 
+- [[Design Pattern Strutturali]] P9
+- [[Pattern di Comportamento]] P10
+- [[Programmazione Solid]] --> [[Cardin SOLID.pdf]] P11
