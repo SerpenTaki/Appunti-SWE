@@ -27,3 +27,8 @@ Questi appunti sono studiati e progettati per essere fruibili tramite Obsidian.
 - [[Design Pattern Strutturali]] P9
 - [[Pattern di Comportamento]] P10
 - [[Programmazione Solid]] --> [[Cardin SOLID.pdf]] P11
+---
+### Esercitazioni 
+*nella directory è possibile trovare delle tracce su cui esercitarsi*
+- [[Esercitazione 1.pdf]]
+- 
