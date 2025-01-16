@@ -117,7 +117,7 @@
 ## Generalizzazione
 - *Aggiungere o modificare* caratteristiche base
 	- Attori
-		- A è generalizzazione di B se B *condivide alemno le funzionlità di A*
+		- A è generalizzazione di B se B *condivide almeno le funzionlità di A*
 ![[Screenshot 2024-10-21 alle 19.46.20.png]]
 - **_Use case_** (raro)
 	- I casi d'uso figli possono *aggiungere* funzionalità rispetto ai padri o modificarne il comportamento
