@@ -105,3 +105,49 @@ assert((width == w) && (height == old.height));
 *//Fin qui per lo studio per l'esame*
 
 ---
+## Interface Segregation Priciple
+- Ridurre l'accoppiamento significa dipendere da interfacce, non dalle implementazioni
+	- Il rischio è quello di dipendere da interfacce “grasse” o “inquinate”.
+	- Le interfacce grasse non sono coesive
+		- I metodi possono essere suddivisi in gruppi di funzioni
+		- I clienti devono visualizzare solo la parte che interessa loro
+>I client non devono essere costretti a dipendere da interfacce che non utilizzano.
+
+
+![[Screenshot 2025-01-16 alle 18.27.41.png]]
+![[Screenshot 2025-01-16 alle 18.27.57.png]]
+- I client di `Door` e `TimerClient` sono differenti
+	- Anche le interfacce dovrebbero rimanere separate
+	- A volte è il client a forzare una modifica a un'interfaccia
+```Java
+public class Timer {
+	void register(int timeout, int timeOutId, TimerClient client);
+}
+public interface TimerClient{
+	//A change to timer implies a change to TimerClient
+	void timeOut(int timeOutId);
+}
+```
+- Anche l'interfaccia `Door` deve essere modificata
+	-  Anche i clienti che non hanno bisogno di porte temporizzate saranno interessati.
+- Il risultato è un accoppiamento inavvertito tra tutti i clienti
+![[Screenshot 2025-01-16 alle 19.15.43.png]]
+![[Screenshot 2025-01-16 alle 19.15.53.png]]
+## Dependency Inversion Principle
+- Una cattiva progettazione spesso deriva dal degrado dovuto a nuovi requisiti e alla manutenzione
+	- *Rigidità* - difficile da modificare perché ogni cambiamento riguarda su molte parti del sistema
+	- *Fragilità* - quando si effettua un cambiamento, parti inaspettate del sistema si rompono del sistema si rompono
+	- *Immobilità* - è difficile da riutilizzare in un'altra applicazione perché non può essere facilmente separato
+	- *TNTWIWHDI* - Non è il modo in cui l'avrei fatto io
+- Interdipendenza dei moduli
+![[Screenshot 2025-01-16 alle 19.19.42.png]]
+![[Screenshot 2025-01-16 alle 19.20.07.png]]
+>I moduli di alto livello non devono dipendere dai moduli di basso livello. Entrambi dovrebbero dipendere da astrazioni. Le astrazioni non devono dipendere dai dettagli. I dettagli devono dipendere dalle astrazioni.
+
+- Dependency Inversion Principle
+- Le decisioni politiche importanti sono contenute in moduli di alto livello
+	- Sono questi moduli che vogliamo essere in grado di riutilizzare
+- Modello di progettazione dei metodi template
+- In un'applicazione a più livelli, ogni livello deve esporre un adeguato livello di astrazione (*interfaccia*)
+	- Un'implementazione ingenua può forzare una dipendenza errata tra i moduli
+![[Screenshot 2025-01-16 alle 19.22.54.png]]
