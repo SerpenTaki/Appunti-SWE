@@ -141,3 +141,4 @@
 		- Livello intermedio, utile nella scoperta di funzionalità *nascoste*
 	- **Fish level**
 		- Livello di dettaglio, da esso si individuano direttamente i *requisiti* del sistema
+Vai a [[Gestione di un Progetto]]

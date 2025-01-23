@@ -142,3 +142,5 @@ attività di processo : https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T02
 	- Verificare l'esito delle azioni di miglioramento rispetto alle attese
 - **Agire (_Act_)**
 	- Consolidare il buono - aggiornando il *way of working* - e cercare altri modi per migliorare il resto
+
+Vai a successivo [[Ciclo di vita del SW]]

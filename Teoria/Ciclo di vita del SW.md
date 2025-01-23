@@ -209,3 +209,5 @@ Il *way of working* ha secondo SEMAT:
 5. **Working well**: misura che il mio *way of working* stia facendo risultati e che quindi io stia lavorando bene. Fare le cose senza costo.
 6. **Retirement**: *Questo si raggiunge a progetto finito in azienda è difficile che si butta via*
 gli stadi di avanzamento sono tutti quanti asincroni, e si avanza secondo la nostra strategia. Il *way of working* deve avanzare velocemente per arrivare il più velocemente possibile all'In Place. 
+
+Vai a [[Diagrammi Dei Casi D'uso]]
