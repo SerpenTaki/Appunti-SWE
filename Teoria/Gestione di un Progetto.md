@@ -186,3 +186,4 @@ A-->D[1.3 Piano di progetto]
 è sconsigliabile che questi 2 macro-periodi siano obiettivi di avanzamento ok che sono richiesti per il progetto ma è molto più consigliabile che questi siano divisi in micro-periodi, *diario di bordo settimanale*-> può questo indicare che i periodi diventano settimanali? non è scontato. I periodi saranno di ampiezza settimanale? improbabile per dare obiettivi significativi.
 *retrospettiva*: attività regolamentata da inserire a ogni fine periodo, per vedere se gli obiettivi posti sono stati raggiunti e raffinare un ragionamento che affini il prossimo obiettivo.
 
+Vai a [[Analisi dei Requisiti]]

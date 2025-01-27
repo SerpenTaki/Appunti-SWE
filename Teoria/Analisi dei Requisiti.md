@@ -184,3 +184,6 @@ in un progetto tutte le attività sono collegate e ognuna di esse certifica il l
 	- Il prodotto soddisfa i principali requisiti al punto da poter meritare rilascio e rischio
 - **Fulfilled**
 	- Il prodotto soddisfa abbastanza requisiti da meritare la piena approvazione degli *stakeholder*
+
+[[Progettazione software]]
+
