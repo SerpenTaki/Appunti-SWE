@@ -31,4 +31,4 @@ Questi appunti sono studiati e progettati per essere fruibili tramite Obsidian.
 ### Esercitazioni 
 *nella directory è possibile trovare delle tracce su cui esercitarsi*
 - [[Esercitazione 1.pdf]]
-- 
+- [[Esercitazione 2 .pdf]]

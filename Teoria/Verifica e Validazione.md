@@ -68,7 +68,6 @@
 ---
 # Inspection
 ### Definizione
-### Definizione
 - **Atteggiamento**
 	- Sappiamo cosa cercare
 - **Obiettivo**
