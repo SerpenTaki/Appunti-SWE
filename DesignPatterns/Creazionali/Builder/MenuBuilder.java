@@ -10,27 +10,27 @@ public class MenuBuilder {
 
     public MenuBuilder withPrimo(String primo){
         this.primo = primo;
-        return primo;
+        return this;
     }
 
     public MenuBuilder withSecondo(String secondo){
         this.secondo = secondo;
-        return secondo;
+        return this;
     }
 
     public MenuBuilder withBibita(String bibita){
         this.bibita = bibita;
-        return bibita;
+        return this;
     }
 
     public MenuBuilder withDolce(String dolce){
         this.dolce = dolce;
-        return dolce;
+        return this;
     }
 
     public Menu build(){ //possiamo costruire gli oggetti senza che ci sia un secondo o una bibita
-        Object.nonNull(primo);
-        Object.nonNull(bibita);
+       // Object.nonNull(primo);
+        //Object.nonNull(bibita);
         return new Menu(primo, secondo, bibita, dolce);
     }
 }

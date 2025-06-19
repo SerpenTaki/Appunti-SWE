@@ -15,4 +15,20 @@ public class Menu {
         this.bibita = bibita;
         this.dolce = dolce;
     }
+
+    public String getPrimo() {
+        return primo;
+    }
+
+    public String getSecondo(){
+        return secondo;
+    }
+
+    public String getBibita(){
+        return bibita;
+    }
+
+    public String getDolce(){
+        return dolce;
+    }
 }
