@@ -1,4 +1,4 @@
-- Affrontare problemi che riguardano la *composizione* di *classi* e *oggetti*
+Mo- Affrontare problemi che riguardano la *composizione* di *classi* e *oggetti*
 - Consentire il *ri-utilizzo* degli *oggetti esistenti* fornendo agli utilizzatori un'interfaccia più adatta
 	- Integrazioni fra librerie/componenti diverse
 - Sfruttano l'*ereditarietà* e l'*aggregazione*
