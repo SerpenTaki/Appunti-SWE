@@ -3,7 +3,7 @@ package Behaviour.Observer;
 import java.util.List;
 import java.util.ArrayList;
 //Concrete Observable (SUBJECT)
-public class EmploymentAgency implements Observable{
+public class EmploymentAgency extends Observable{
     private List<Observer> observers = new ArrayList<>();
 
     @Override
